@@ -1,0 +1,24 @@
+Gdk-Message: 20:48:13.496: firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+Sandbox: seccomp sandbox violation: pid 1010, tid 1010, syscall 16, args 2 21523 140735691013688 0 1 0.
+Sandbox: seccomp sandbox violation: pid 1055, tid 1055, syscall 16, args 2 21523 140735400761160 0 1 0.
+Sandbox: seccomp sandbox violation: pid 1149, tid 1149, syscall 16, args 2 21523 140735185779784 0 1 0.
+Sandbox: seccomp sandbox violation: pid 1105, tid 1105, syscall 16, args 2 21523 140731867318776 0 1 0.
+Gdk-Message: 20:48:13.498: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x1A0011,name=PBackgroundStorage::Msg_Observe) Channel error: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x1A0011,name=PBackgroundStorage::Msg_Observe) Channel error: cannot send/recv
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+/config/profile/prefs.js:193: prefs parse error: unknown keyword
+/config/profile/prefs.js:195: prefs parse error: unknown keyword
+/config/profile/prefs.js:220: prefs parse error: unknown keyword
+/config/profile/prefs.js:221: prefs parse error: unknown keyword
