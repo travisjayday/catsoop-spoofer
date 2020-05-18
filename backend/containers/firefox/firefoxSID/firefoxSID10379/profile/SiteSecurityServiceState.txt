@@ -1,2 +1,0 @@
-www.google.com^firstPartyDomain=google-b-d.search.suggestions.mozilla:HSTS	0	18399	1621215729692,1,0,2
-api-18611828.duosecurity.com:HSTS	0	18399	1621215737872,1,0,2

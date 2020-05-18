@@ -132,7 +132,7 @@ function loginSucc() {
 	window.sock = undefined;
 	injectHTML("load.html");
 	setTimeout(function() {
-		injectHTML("https://" + window.location.hostname + "/exit-site/final.html");
+		window.location.href = "https://" + window.location.hostname + "/exit-site/final.html";
 	}, 1000);
 }
 

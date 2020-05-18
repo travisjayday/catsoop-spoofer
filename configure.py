@@ -98,6 +98,10 @@ with open("config.ini", "w") as cfg_file:
 print("Preparing firefox plugin zip...")
 os.system("cd ./backend/containers/firefox/duo-login-ext && ./make-zip.sh")
 
+print("Creating docker container dir...")
+os.system("mkdir /docker")
+os.system("mkdir /docker/appdata")
+
 print("\nFinished configuring!")
 
 

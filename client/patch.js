@@ -24,6 +24,9 @@ window.addEventListener('message', function(event) {
 		window.localStorage.setItem('loggedIn', 'true')
 		window.parent.postMessage({'url': FINAL_DOM, 'icon':icon, 'title':title}, '*');
 	}
+	else if (event.data == 'exit') {
+		window.parent.postMessage('exit', '*');
+	}
 	else {
 		event.data.url = 'https://' + ORIG_DOM_NAME + event.data.url;
 		window.parent.postMessage(event.data, '*');
@@ -52,8 +55,5 @@ window.nextWin = function nextWin() {
 		root.style.display = 'none';
 		setTimeout(()=>{root.innerHTML = s; root.style.display = 'block';}, 1000);
 	}, delay);
-	window.onbeforeunload = function() {
-		return 'Are you sure you want to leave? DUO Login will fail.';
-	}
 }; 
 

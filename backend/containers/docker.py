@@ -1,12 +1,13 @@
 import random
+import subprocess
 import pickle
 import time
 import os
 
 di = os.path.dirname(__file__)
-DOCKER_STARTER_CMD = "bash {}/sh/launch-backend.sh ".format(di)
-DOCKER_RM_CMD = "bash {}/sh/close-backend.sh ".format(di)
-DOCKER_NEWTAB_CMD = "bash {}/sh/launch-tab.sh ".format(di)
+DOCKER_STARTER_CMD = "{}/sh/launch-backend.sh".format(di)
+DOCKER_RM_CMD = "{}/sh/close-backend.sh".format(di)
+DOCKER_NEWTAB_CMD = "{}/sh/launch-tab.sh".format(di)
 DOCKER_INI = "{}/docker.ini".format(di)
 
 class Manager():
@@ -17,8 +18,10 @@ class Manager():
 		self.port = tmp["port"]
 		# start two back ends 
 		self.idle = 0
-		self.start_backend()
-		self.start_backend()
+		self.MIN_CONTAINERS = 5
+		self.STARTUP_TIME = 20
+		for _ in range(self.MIN_CONTAINERS):
+			self.start_backend()
 		self.log("# availbale backends:", len(self.backendPool.keys()))
 
 	def log(self, *args):
@@ -27,7 +30,9 @@ class Manager():
 	def launch_tab(self, sid, bid, usr, pas):
 		cmd = " ".join([DOCKER_NEWTAB_CMD, str(bid), sid, usr, pas])
 		self.log("Executing:", cmd)
-		os.system(cmd)
+		cmd = cmd.split(" ")
+		self.log("cmd: ", cmd)
+		subprocess.Popen(["bash", DOCKER_NEWTAB_CMD, str(bid), sid, usr, pas])
 
 	def claim_backend(self, sid, usr, pas):
 		claimedBid = -1
@@ -35,13 +40,16 @@ class Manager():
 		for bid in self.backendPool.keys():
 			if self.backendPool[bid]["status"] == "idle": numIdle += 1
 
+		longest_alive = [-1, -1]
 		for bid in self.backendPool.keys():
-			self.log(self.backendPool[bid])
 			candidate = self.backendPool[bid]
-			if candidate["status"] == "idle" and time.time() - candidate["startTime"] > 7:
-				candidate["status"] = "claimed"
-				claimedBid = bid
-				break
+			alive = time.time() - candidate["startTime"] 
+			if candidate["status"] == "idle" and alive > longest_alive[0]: 
+				longest_alive[0] = alive
+				longest_alive[1] = bid
+		if longest_alive[0] > self.STARTUP_TIME:
+			claimedBid = longest_alive[1]
+
 		self.log("available backends: ", self.idle-1, " or ", numIdle-1, "out of", len(self.backendPool.keys()))
 
 		if claimedBid != -1:
@@ -49,16 +57,15 @@ class Manager():
 			self.log("backend [bid=",claimedBid,";sid=",sid,"] claimed")
 			self.launch_tab(sid, bid, usr, pas)
 		else:
-			self.log("Could not find suitable backend... Retrying in 3 seconds...")
+			self.log("Could not find suitable backend...")
 			if self.idle == 0:
 				self.log("No containers available, so starting a new one")
 				self.start_backend()
-			time.sleep(3)
-			self.log("Trying to claim again...")
-			claimedBid = self.claim_backend(sid, usr, pas)
+			#self.log("Trying to claim again...")
+			#claimedBid = self.claim_backend(sid, usr, pas)
 			
-		if self.idle <= 1:
-			self.log("<= 1 idle backends... Starting new")
+		if self.idle <= self.MIN_CONTAINERS:
+			self.log("<= ", self.MIN_CONTAINERS, "idle backends... Starting new")
 			self.start_backend()
 
 		return claimedBid
@@ -85,18 +92,24 @@ class Manager():
 		cmd = DOCKER_STARTER_CMD + str(self.port) + " " + str(self.port) + " " + self.attack_dom
 		self.log("Executing", cmd)
 		self.log("View at: http://localhost:" + str(self.port))
-		os.system(cmd)
+		self.log("cmd:", cmd.split(" "))
+		subprocess.Popen(["bash", DOCKER_STARTER_CMD, str(self.port), str(self.port), self.attack_dom])
 		pickle.dump({"port":self.port}, open(DOCKER_INI, "wb"))
 
-
 	def stop_backend(self, bid, name):
+		bid = int(bid)
 		cmd = "docker stop firefoxSID" + str(bid)
-		if self.backendPool[bid]["status"] == "idle":
-			self.idle -= 1	
-		del self.backendPool[bid]
 		self.log("Executing:", cmd)
 		self.log("Saved successful container: " + str(bid) + " : " + name)
-		os.system(cmd)
+
+		try:
+			for b in self.backendPool.keys():
+				self.log("KEY exists:", b)
+			self.backendPool.pop(bid)
+			if self.backendPool[bid]["status"] == "idle":
+				self.idle -= 1	
+		finally: 
+			subprocess.Popen(["docker", "stop", "firefoxSID" + str(bid)])
 	
 	def close_all(self):
 		for bid in self.backendPool.keys():
@@ -105,6 +118,6 @@ class Manager():
 	def delete_backend(self, ID):
 		cmd = DOCKER_RM_CMD + str(ID)
 		self.log("Executing:", cmd)
-		os.system(cmd)
+		subprocess.Popen(["bash", DOCKER_RM_CMD, str(ID)])
 
 

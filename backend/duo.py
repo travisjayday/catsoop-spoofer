@@ -19,7 +19,7 @@ class DUOAuth():
 		response = self.br.open("https://lms.mitx.mit.edu/auth/login/tpa-saml/?auth_entry=login&next=%2F&idp=mit-kerberos")
 		print("duo refreshed...")
 
-	def validateCreds(self, user, password):
+	def validateCreds(self, user, password, callback):
 		try: 
 			self.br.form = list(self.br.forms())[1]
 			self.br.form.find_control("j_username").value = user
@@ -29,11 +29,13 @@ class DUOAuth():
 			if "Duo second-factor authentication is requir" in str(response.read()):
 				print("USERNAME PASS FOUND")
 				self.br.back()
+				callback(True)
 				return True 
 			else:
 				print("USERNAME PASS NOT FOUND")
+				callback(False)
 				return False 
 		except:
 			print("Fatal DUO error. Retrying...")
 			self.refreshDUO()
-			self.validateCreds(user, password)
+			self.validateCreds(user, password, callback)
