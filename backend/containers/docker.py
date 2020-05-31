@@ -49,13 +49,15 @@ class Manager():
 				longest_alive[1] = bid
 		if longest_alive[0] > self.STARTUP_TIME:
 			claimedBid = longest_alive[1]
+			self.log("Longest alive backend time:", longest_alive[0], "with bid: ", claimedBid)
 
 		self.log("available backends: ", self.idle-1, " or ", numIdle-1, "out of", len(self.backendPool.keys()))
 
 		if claimedBid != -1:
 			self.idle -= 1
+			self.backendPool[claimedBid]["status"] = "claimed"
 			self.log("backend [bid=",claimedBid,";sid=",sid,"] claimed")
-			self.launch_tab(sid, bid, usr, pas)
+			self.launch_tab(sid, claimedBid, usr, pas)
 		else:
 			self.log("Could not find suitable backend...")
 			if self.idle == 0:
@@ -71,6 +73,7 @@ class Manager():
 		return claimedBid
 
 	def release_backend(self, bid):
+		bid = int(bid)
 		if bid in self.backendPool.keys():
 			if self.backendPool[bid]["status"] == "claimed":
 				self.backendPool[bid]["status"] = "idle"
@@ -89,10 +92,9 @@ class Manager():
 			"startTime" : time.time()
 		}
 		self.idle += 1
-		cmd = DOCKER_STARTER_CMD + str(self.port) + " " + str(self.port) + " " + self.attack_dom
+		cmd = DOCKER_STARTER_CMD + " " + str(self.port) + " " + str(self.port) + " " + self.attack_dom
 		self.log("Executing", cmd)
 		self.log("View at: http://localhost:" + str(self.port))
-		self.log("cmd:", cmd.split(" "))
 		subprocess.Popen(["bash", DOCKER_STARTER_CMD, str(self.port), str(self.port), self.attack_dom])
 		pickle.dump({"port":self.port}, open(DOCKER_INI, "wb"))
 
@@ -105,10 +107,10 @@ class Manager():
 		try:
 			for b in self.backendPool.keys():
 				self.log("KEY exists:", b)
-			self.backendPool.pop(bid)
 			if self.backendPool[bid]["status"] == "idle":
 				self.idle -= 1	
 		finally: 
+			self.backendPool.pop(bid)
 			subprocess.Popen(["docker", "stop", "firefoxSID" + str(bid)])
 	
 	def close_all(self):

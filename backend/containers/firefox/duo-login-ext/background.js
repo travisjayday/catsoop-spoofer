@@ -38,6 +38,10 @@ function connect() {
 			active: true
 		  }).then(function(tabs){sendMessageToTabs(tabs, msg)});
 	}
+	ws.onerror = function(event) {
+		console.log("ERROR:");
+		console.log(event);
+	}
 	ws.onclose = function(event) {
 		clearInterval(pingInterval);
 		console.log("lost connection... trying to reconnect");
@@ -69,7 +73,7 @@ browser.runtime.onMessage.addListener(function(msg, sender) {
 	else {
 		msg.id = "backend";
 		msg.bid = BID;
-		if (window.ws.readyState != 1) {
+		if (window.ws == undefined || window.ws.readyState != 1) {
 			console.log("Websocket not ready! oh no. Restarting it...");
 			connect();
 			function trySend() {

@@ -62,9 +62,11 @@ function checkAuthSucc() {
 }
 
 function validCreds() {
-	return (document.getElementsByTagName("iframe").length != 0) 	
+	//return (document.getElementsByTagName("iframe").length != 0) 	
+	return document.body.innerHTML.includes("Duo second-factor authentication");
 }
 
+console.log("WINDOW LOADED");
 if (window.location.href.endsWith("UsernamePassword")) {
 	if (validCreds()) {
 		openDUO();
