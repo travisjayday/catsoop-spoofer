@@ -14,7 +14,7 @@ Remark:
 Please don't tell the catsoop people about this yet, as this is still a work in progress and I haven't yet stolen my friend's credentials.
 
 ## Exploiting
-Because of this arbitrary code injection, we can harvest DUO credentials! That's what this repo is for. But not just credentials -- with a little bit of docker magic, we can harvest 30 DUO sessions, meaning we'd have our victim fully compromised. We could access their websis, their Zoom, their Atlas, their E-Mails, and more. How does it work? Man-in-the-middle with Docker backends.
+Because of this arbitrary code injection, we can harvest DUO credentials! That's what this repo is for. But not just credentials -- with a little bit of docker magic, we can harvest 30 day DUO sessions, meaning we'd have our victim fully compromised. We could access their websis, their Zoom, their Atlas, their E-Mails, and more. How does it work? Man-in-the-middle with Docker backends.
 
 The key components of this attack include: 
 
@@ -25,24 +25,23 @@ The key components of this attack include:
 - Docker containers that run firefox and have a custom firefox extension loaded that connects to attackers websocket server (bash, html, css, js)
 
 ## Example Attack Flow
-
+                         
+![](/readme/graph.png)
+                                                                             
 1. User happily opens malicious URL because he's connecting to a familiar catsoop site 
 2. Through the XSS, we inject a webpage that the user expects (a clone of the catsoop site, callend `entry-site` located in `/client/public/entry-site`)
 3. The user clicks on the familiar login button and is redirected to the DUO login page. Note: this spoof simulates page loads and features exact copies of the DUO auth flow (located in `/client/public/idp/Authn`). \*
 4. After inputting his credentials, victim's browser opens a websocket session with the attacker's machine who verifies the credentials using a python browser. 
-5. If the credentials were right, the server chooses one of many running docker containers and assigns the victim to that container. The container is running a firefox (can be accessed with VNC) and a custom firefox extension (located in `/backend/containers/firefox/duo-login-ext`). 
+5. If the credentials were right, the server chooses one of many running docker containers and assigns the victim to that container. The container is running a firefox instance (can be accessed with VNC) and a custom firefox extension (located in `/backend/containers/firefox/duo-login-ext`). 
 6. The assigned container goes to a DUO login page and injects the victim's credentials. At this point, the victim and the container are synced: They are both at the DUO prompt where the victim has to choose an authentication method (phone call or DUO push). 
 7. The user chooses an auth method, his choice is relayed to the docker backend through the websocket server, and the docker backend makes that choice on the real DUO site. 
 8. The user will get a call or push from DUO, thinking that he made the request EVEN THOUGH THE DOCKER CONTAINED FIREFOX DID. \*\*
 9. The user authenticates the DUO request with his phone and gets re-directed to either (`/client/public/exit-site`) or the REAL, original catsoop.org page (this can be configured at will). In the future, if he tries to click the malicious link again, he will be auto-redirected to the legit catsoop site. 
-10. The docker container that was succesfully logged into is shutdown and save. An entry to it's firefox profile is made into the attacker's firefox profiles list. 
-11. The attacker goes to his firefox, changes his profile to the victim, and now has access to everything that requires DUO authentication.
+10. The docker container that was succesfully logged into is shutdown and saved. An entry to it's firefox profile is made into the attacker's firefox profiles list. 
+11. The attacker goes to his firefox, changes his profile to the victim profile, and now has access to everything that requires DUO authentication.
 
 \*Note: The only difference is the URL displayed in the browser. The domain `idp.mit.edu` is replaced by the corresponding vulnerable `catsoop.org` domain. Only very keen victims might notice this difference. Also note that mobile DUO is supported / spoofed.  
 \*\*Note: If the victim chose DUO push AND he expands the notification or opens it in the app, he might notice that the request came from a different geographical location IFF the victim and attacker are in different cities. 
-
-## Visual Representation
-![](/readme/graph.png)
 
 ## Dependencies
 python3 packages (can be installed with pip):
