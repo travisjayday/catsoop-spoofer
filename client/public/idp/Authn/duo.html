@@ -318,6 +318,8 @@ iframe#duo_iframe {
     clear: both;
 }
 
+/* Important: This field gets replaced by server if incorrect creds were supplied*/
+#passerr{display:none}
 </style>
 	<link rel="icon"
       type="image/png"
@@ -361,7 +363,7 @@ iframe#duo_iframe {
 				for assistance. 
 			</p>
 		</div>
-	<div id="passerr" class="error" style="display:none">
+	<div id="passerr" class="error">
 			<p>
 			
 			  Error: Please enter a valid username and password.

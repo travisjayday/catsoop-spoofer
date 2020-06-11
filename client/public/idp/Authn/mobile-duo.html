@@ -2015,6 +2015,8 @@ h2.icon {
 .forminput { width: 175px; height: 20px; position: relative; }
 .short { width: 100px; }
 .formbuttons { margin-bottom: 18px; }
+ /* Important: This field gets replaced by server if incorrect creds were supplied*/
+#passerr{display:none} 
 </style>
 
 <link rel="icon" href="">
@@ -2063,7 +2065,7 @@ h2.icon {
                     Error: Certificate authentication failed.
                 
 	</div>
-  	<div id="passerr" style="display:none" class="alertbox warning">
+  	<div id="passerr" class="alertbox warning">
 		
 		Error: You entered an incorrect username or password (or both).
                 

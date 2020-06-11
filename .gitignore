@@ -5,5 +5,7 @@ __pycache__/
 /client/public/entry-site
 /client/public/exit-site
 /client/public/'<
+/clinet/public/compiled-patch.js
 /config.ini
 *.zip
+*.swp

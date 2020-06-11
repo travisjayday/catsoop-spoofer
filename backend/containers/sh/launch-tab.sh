@@ -1,8 +1,8 @@
 #usage; launch-tab.sh BID SID user pass
 until [ -f "/docker/appdata/firefoxSID$1/profile/addons.json" ]
 do
-	echo "launch tabwaiting for $1"
-	sleep 1
+    echo "launch tabwaiting for $1"
+    sleep 1
 done
 
 prefix=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )

