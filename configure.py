@@ -111,8 +111,13 @@ with open(entry_index_file, "r+") as index_file:
     html = index_file.read()
     soup = bs(html, "html.parser")
     s = soup.new_tag("script")
-    s["src"] = "https://" + domain + "/compiled-patch.js";
+    s["src"] = "https://" + domain + "/compiled-patch.js"
     soup.body.insert(0, s);
+    
+    # insert base tag to ensure images and other resources get loaded
+    b = soup.new_tag("base")
+    b["href"] = "https://" + domain + "/entry-site/"
+    soup.head.insert(0, b)
 
     # make login links clickable, triggering js nextWin() 
     for link in soup.find_all('a'):

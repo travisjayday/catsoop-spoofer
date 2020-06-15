@@ -133,7 +133,7 @@ class Manager():
                     self.idle -= 1  
         finally: 
             self.backendPool.pop(bid)
-            #subprocess.Popen(["docker", "stop", "firefoxSID" + str(bid)])
+            subprocess.Popen(["docker", "stop", "firefoxSID" + str(bid)])
 
     # Deletes all currently active backends from disk
     def close_all(self):

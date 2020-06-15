@@ -24,7 +24,7 @@ function submitDUO() {
                     + '&mobile='    + mobile,
             url  : '/idp/Authn/UsernamePassword',
             icon : '/idp/Authn/images/favicon2.ico',
-            title: 'Touchstone@MIT : 22',
+            title: 'Touchstone@MIT - Duo Authentication',
             load : '2'
         }, '*');
     }, 100);

