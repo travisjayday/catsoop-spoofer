@@ -43,6 +43,19 @@ The key components of this attack include:
 \*Note: The only difference is the URL displayed in the browser. The domain `idp.mit.edu` is replaced by the corresponding vulnerable `catsoop.org` domain. Only very keen victims might notice this difference. Also note that mobile DUO is supported / spoofed.  
 \*\*Note: If the victim chose DUO push AND he expands the notification or opens it in the app, he might notice that the request came from a different geographical location IFF the victim and attacker are in different cities. 
 
+## Important Source Files
+The primary XSS injection payload (which gets injected multiple times throughout the flow): ![/client/payload.js](/client/payload.js)
+
+The https server: ![/client/https_server.py](/client/https_server.py)
+
+The victim's socket client: ![/client/public/idp/Authn/remote-bridge.js](/client/public/idp/Authn/remote-bridge.js), ![/client/public/idp/Authn/remote-bridge-2.js](/client/public/idp/Authn/remote-bridge-2.js)
+
+The websocket server: ![/backend/socket_server.py](/backend/socket_server.py)
+
+The docker ochrestrator: ![/backend/containers/docker.py](/backend/containers/docker.py)
+
+The firefox extension (loaded in the docker container): ![/backend/containers/firefox/duo-login-ext](/backend/containers/firefox/duo-login-ext)
+
 ## Dependencies
 python3 packages (can be installed with pip):
 ```
