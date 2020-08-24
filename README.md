@@ -1,3 +1,5 @@
+# Note: This has been fixed in the latest dev Snapshot of CATSOOP
+
 ## Vulnerability
 All modern catsoop powered sites suffer from a neat XSS vulnerability that allows for arbitrary client-side code execution. 
 
