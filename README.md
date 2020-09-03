@@ -23,6 +23,9 @@ HTTP Get query key/value pairs in the URL do not get sanitized. If these values 
 Proof of concept:
 The 6.009 site uses the vulnerable query parameters for the recitation page: `https://py.mit.edu/fall20/recitation?rec=%3cscript%3ealert(1)%3c/script%3e`
 
+Tested on:
+- Client: iOS/Chrome+Safari, Android/Chrome, Windows/Chrome, MacOS/Chrome+Safari
+- DUO: iOS calls, Android calls + pushes
 
 ## Exploiting
 Through this arbitrary client-side code injection, we can harvest DUO credentials! That's what this repo is for. But not just credentials -- with a little bit of docker magic, we can even steal 30-day DUO sessions, meaning we'd have our victim fully compromised. We could access their MIT Websis, their Zoom, their Atlas, their E-Mails, their MITPay, and more. How does it work? Man-in-the-middle with Docker backends.
