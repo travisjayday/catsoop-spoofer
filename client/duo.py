@@ -20,12 +20,15 @@ class DuoAuth():
         sched.add_job(self.refreshDUO, 'interval', minutes=7)
         sched.start()
 
+    def log(self, val):
+        print("[*] DUO_AUTH\t\t" + val)
+
     # Refreshses the site 
     def refreshDUO(self):
-        print('Resfreshing duo website...')
+        self.log('Resfreshing duo website...')
         response = self.br.open("https://lms.mitx.mit.edu/auth/login/" \
             + "tpa-saml/?auth_entry=login&next=%2F&idp=mit-kerberos")
-        print("Duo credential verifier refreshed...")
+        self.log("Duo credential verifier refreshed...")
 
     # Checks if user/password are valid credentials. Returns true
     # if they are, False if not. If an error occurs, the page is 
@@ -38,14 +41,14 @@ class DuoAuth():
             response = self.br.submit()
 
             if "Duo second-factor authentication is " in str(response.read()):
-                print("USERNAME PASS FOUND")
+                self.log("USERNAME PASS FOUND")
                 self.br.back()
                 return True 
 
-            print("USERNAME PASS NOT FOUND")
+            self.log("USERNAME PASS NOT FOUND")
             return False 
         except Exception as e:
-            print("Fatal DUO error. Retrying...")
-            print(e)
+            self.log("Fatal DUO error. Retrying...")
+            self.log(e)
             self.refreshDUO()
             return self.validateCreds(user, password, callback)

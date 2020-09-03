@@ -29,7 +29,7 @@ function connect() {
                     }));
                 alive = false;
             }
-        }, 3000);
+        }, 4000);
         ws.send(JSON.stringify({
             "auth" : "Backend " + BID + " connected!", 
         }));

@@ -1,6 +1,7 @@
-# Note: This has been fixed in the latest dev Snapshot of CATSOOP
 
-## Vulnerability
+## Vulnerability 0 \[aka CVE-CATXSS-1-6-2020\]
+### Note: This has been fixed in the latest dev Snapshot of CATSOOP. See CVE-CAT-SEP2020 for a Fall 2020 attack vector.
+
 All modern catsoop powered sites suffer from a neat XSS vulnerability that allows for arbitrary client-side code execution. 
 
 Cause: 
@@ -12,11 +13,19 @@ Proof of concept:
 Fix: 
 Simply sanitize the url before displaying it. 
 
-Remark: 
-Please don't tell the catsoop people about this yet, as this is still a work in progress and I haven't yet stolen my friend's credentials.
+## Vulnerability 1 \[aka CVE-CATXSS-1-9-2020\]
+
+Modern catsoop sites that reflect query string parameters on the page are vulnerable. 
+
+Cause:
+HTTP Get query key/value pairs in the URL do not get sanitized. If these values get directly displayed on the page, we have an XSS attack vector.
+
+Proof of concept:
+The 6.009 site uses the vulnerable query parameters for the recitation page: `https://py.mit.edu/fall20/recitation?rec=%3cscript%3ealert(1)%3c/script%3e`
+
 
 ## Exploiting
-Because of this arbitrary code injection, we can harvest DUO credentials! That's what this repo is for. But not just credentials -- with a little bit of docker magic, we can harvest 30 day DUO sessions, meaning we'd have our victim fully compromised. We could access their websis, their Zoom, their Atlas, their E-Mails, and more. How does it work? Man-in-the-middle with Docker backends.
+Through this arbitrary client-side code injection, we can harvest DUO credentials! That's what this repo is for. But not just credentials -- with a little bit of docker magic, we can even steal 30-day DUO sessions, meaning we'd have our victim fully compromised. We could access their MIT Websis, their Zoom, their Atlas, their E-Mails, their MITPay, and more. How does it work? Man-in-the-middle with Docker backends.
 
 The key components of this attack include: 
 
@@ -35,15 +44,15 @@ The key components of this attack include:
 3. The user clicks on the familiar login button and is redirected to the DUO login page. Note: this spoof simulates page loads and features exact copies of the DUO auth flow (located in `/client/public/idp/Authn`). \*
 4. After inputting his credentials, victim's browser opens a websocket session with the attacker's machine who verifies the credentials using a python browser. 
 5. If the credentials were right, the server chooses one of many running docker containers and assigns the victim to that container. The container is running a firefox instance (can be accessed with VNC) and a custom firefox extension (located in `/backend/containers/firefox/duo-login-ext`). 
-6. The assigned container goes to a DUO login page and injects the victim's credentials. At this point, the victim and the container are synced: They are both at the DUO prompt where the victim has to choose an authentication method (phone call or DUO push). 
+6. The assigned container goes to a DUO login page and injects the victim's credentials. At this point, the victim and the container are synced: They are both at the DUO prompt where the victim has to choose an authentication method (phone call or DUO push if available. User information such as phone number and device type is communicated in realtime). 
 7. The user chooses an auth method, his choice is relayed to the docker backend through the websocket server, and the docker backend makes that choice on the real DUO site. 
 8. The user will get a call or push from DUO, thinking that he made the request EVEN THOUGH THE DOCKER CONTAINED FIREFOX DID. \*\*
-9. The user authenticates the DUO request with his phone and gets re-directed to either (`/client/public/exit-site`) or the REAL, original catsoop.org page (this can be configured at will). In the future, if he tries to click the malicious link again, he will be auto-redirected to the legit catsoop site. 
-10. The docker container that was succesfully logged into is shutdown and saved. An entry to it's firefox profile is made into the attacker's firefox profiles list. 
+9. The user authenticates the DUO request with his phone and gets re-directed to either (`/client/public/exit-site`) or the REAL, original catsoop.org page (this can be configured). In the future, if he tries to click the malicious link again, he will be auto-redirected to the legit catsoop site. 
+10. The docker container that was succesfully logged into is shutdown and saved. An entry to it's firefox profile is made in the attacker's firefox profiles list. 
 11. The attacker goes to his firefox, changes his profile to the victim profile, and now has access to everything that requires DUO authentication.
 
-\*Note: The only difference is the URL displayed in the browser. The domain `idp.mit.edu` is replaced by the corresponding vulnerable `catsoop.org` domain. Only very keen victims might notice this difference. Also note that mobile DUO is supported / spoofed.  
-\*\*Note: If the victim chose DUO push AND he expands the notification or opens it in the app, he might notice that the request came from a different geographical location IFF the victim and attacker are in different cities. 
+\*Note: The only difference is the URL displayed in the browser. The domain `idp.mit.edu` is replaced by the corresponding vulnerable `catsoop.org` or `mit.edu` domain. Only very keen victims might notice this difference. Also note that mobile DUO is supported / spoofed (e.g. Android, iOS).
+\*\*Note: If the victim chose DUO push AND he expands the notification or opens it in the app, he might notice that the request came from a different geographical location IFF the victim and attacker are in different cities. Again, only keen Android users might notice this since DUO Push is not available on iOS.  
 
 ## Important Source Files
 The primary XSS injection payload (which gets injected multiple times throughout the flow): ![/client/payload.js](/client/payload.js)
@@ -78,8 +87,17 @@ wss://attacker-domain.com:80 --> localhost:80
 
 There are free DNS sites like https://freenom.com that let you create your `attacker-domain` and route it to your public IP (use port forwarding on your router obviously).
 
-Place your SSL certificates in the `/ssl` forder. You will need the files `cert.pem` and `key.pem` in the `ssl` folder. Use a certificate authority to generate these (don't genereate them yourself). There are free sites like https://www.sslforfree.com/ that do this for you.
+Place your SSL certificates in the `/ssl` forder. You will need the files `cert.pem` and `key.pem` in the `ssl` folder. Use a certificate authority to generate these (don't genereate them yourself). There are free sites like https://www.sslforfree.com/ that do this for you. I recommend using certbot from Let's Encrypt. 
+
+Note `cert.pem` is the public certificate file and may be originally named `certificate.crt` or `cert.crt`. `key.pem` is the private key and may be originally named `private.key`. 
+
+Note: If for some reason your docker container's firefoxes have issues with your certificate, you can create an entry in firefoxSID/profile/cert\_override.txt to add a manual exception to certs. This should generally not be the case, however. 
                                                                                                                                         
+## Modifying the Spoof
+After making changes you should generally run `configure.py` again. However:
+- If you just make changes to the Firefox extension, you can just run `./make-zips.sh` and that will re-pack the extension.
+- If you want to make temporary changes to the payload, you can modify files in the `client/public` directory as desired. The main payload is either in `client/public/'\</pre` or in `client/public/index.html` depending on which exploit/CVE you configured with. 
+
 ## Running the Spoof
 Configure the entrance, exit website, and other environment variables by running
 

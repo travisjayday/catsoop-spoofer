@@ -25,7 +25,7 @@ class Manager():
                 self.start_backend()
 
     def log(self, *args):
-        print( "DOCKER_MANAGER:"+" ".join(map(str,args)))
+        print( "[*] DOCKER_MANAGER\t" + " ".join(map(str,args)))
 
     # launches a DUO tab in the firefox browser running on docker container bid
     def launch_tab(self, sid, bid, usr, pas):

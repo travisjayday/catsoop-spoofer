@@ -4,7 +4,7 @@
 # 
 # usage: run-server BID port ATTACK_DOM localhost_ip
 
-echo "[*] Starting docker process at: $(date +%s%N | cut -b1-13)"
+echo -e "[*] SH\t\t\tStarting docker process at: $(date +%s%N | cut -b1-13)"
 prefix=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
 # Copy firefox extension .zip into tmp, and unzip it to modify it
@@ -31,6 +31,7 @@ docker run -d \
     --name=firefoxSID$1 \
     -p $2:5800 \
     -v /docker/appdata/firefoxSID$1:/config:rw \
+    --privileged \
     --shm-size 2g \
 	-e "FF_PREF_INSTALL=xpinstall.signatures.required=false" \
 	-e "FF_PREF_WHITELIST=xpinstall.whitelist.required=false" \

@@ -9,3 +9,5 @@ __pycache__/
 /config.ini
 *.zip
 *.swp
+/backend/leaked.txt
+./leaked.txt
