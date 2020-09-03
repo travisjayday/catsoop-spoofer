@@ -1,6 +1,6 @@
 
 ## Vulnerability 0 \[aka CVE-CATXSS-1-6-2020\]
-### Note: This has been fixed in the latest dev Snapshot of CATSOOP. See CVE-CAT-SEP2020 for a Fall 2020 attack vector.
+### Note: This has been fixed in the latest dev Snapshot of CATSOOP. See CVE-CATXSS-1-9-2020 for a Fall 2020 attack vector.
 
 All modern catsoop powered sites suffer from a neat XSS vulnerability that allows for arbitrary client-side code execution. 
 
