@@ -1,8 +1,8 @@
 
-## Vulnerability 0 \[aka CVE-CATXSS-1-6-2020\]
-### Note: This has been fixed in the latest dev Snapshot of CATSOOP. See CVE-CATXSS-1-9-2020 for a Fall 2020 attack vector.
+## Vulnerability 0 \[aka CVE-CATXSS-6-1-2020\]
+### Note: This has been fixed in the latest dev Snapshot of CATSOOP. See CVE-CATXSS-9-1-2020 for a Fall 2020 attack vector.
 
-All modern catsoop powered sites suffer from a neat XSS vulnerability that allows for arbitrary client-side code execution. 
+All modern catsoop powered sites suffer from an XSS vulnerability that allows for arbitrary client-side code execution. 
 
 Cause: 
 When loading the 404 page not found, catsoop does not sanitize the URL and displays it in the raw html page. 
@@ -13,7 +13,10 @@ Proof of concept:
 Fix: 
 Simply sanitize the url before displaying it. 
 
-## Vulnerability 1 \[aka CVE-CATXSS-1-9-2020\]
+Status: 
+**Patched**
+
+## Vulnerability 1 \[aka CVE-CATXSS-9-1-2020\]
 
 Modern catsoop sites that reflect query string parameters on the page are vulnerable. 
 
@@ -26,9 +29,13 @@ The 6.009 site uses the vulnerable query parameters for the recitation page: `ht
 Tested on:
 - Client: iOS/Chrome+Safari, Android/Chrome, Windows/Chrome, MacOS/Chrome+Safari
 - DUO: iOS calls, Android calls + pushes
+- CATSOOP domain: py.mit.edu / CAT-SOOP v2021.2.0.dev8 ("Devon Rex" development snapshot).
+
+Status: 
+**Vulnerable/Ongoing**
 
 ## Exploiting
-Through this arbitrary client-side code injection, we can harvest DUO credentials! That's what this repo is for. But not just credentials -- with a little bit of docker magic, we can even steal 30-day DUO sessions, meaning we'd have our victim fully compromised. We could access their MIT Websis, their Zoom, their Atlas, their E-Mails, their MITPay, and more. How does it work? Man-in-the-middle with Docker backends.
+Through these XSS (Cross-Site-Scripting) vulnerabilites, we achieve arbitrary client-side code injection to thus harvest DUO credentials by bypassing the 2FA (two-factor authentication). That's what this repository is for. But we don't just harvest credentials -- with a little bit of docker magic, we can even steal 30-day DUO sessions, meaning we'd have our victim fully compromised for 30 days. We could access their MIT Websis, their Zoom, their Atlas, their E-Mails, their MITPay, and more. How does it work? Man-in-the-middle with Docker virtualized container backends.
 
 The key components of this attack include: 
 
@@ -42,12 +49,12 @@ The key components of this attack include:
                          
 ![](/readme/graph.png)
                                                                              
-1. User happily opens malicious URL because he's connecting to a familiar catsoop site 
+1. User happily opens malicious URL because he's connecting to a familiar catsoop / mit.edu site 
 2. Through the XSS, we inject a webpage that the user expects (a clone of the catsoop site, callend `entry-site` located in `/client/public/entry-site`)
-3. The user clicks on the familiar login button and is redirected to the DUO login page. Note: this spoof simulates page loads and features exact copies of the DUO auth flow (located in `/client/public/idp/Authn`). \*
-4. After inputting his credentials, victim's browser opens a websocket session with the attacker's machine who verifies the credentials using a python browser. 
-5. If the credentials were right, the server chooses one of many running docker containers and assigns the victim to that container. The container is running a firefox instance (can be accessed with VNC) and a custom firefox extension (located in `/backend/containers/firefox/duo-login-ext`). 
-6. The assigned container goes to a DUO login page and injects the victim's credentials. At this point, the victim and the container are synced: They are both at the DUO prompt where the victim has to choose an authentication method (phone call or DUO push if available. User information such as phone number and device type is communicated in realtime). 
+3. The user clicks on the familiar login button and is redirected to the fake DUO login page. Note: this spoof simulates page buffering and features exact copies of the DUO auth flow (located in `/client/public/idp/Authn`). \*
+4. After inputting his credentials, the victim's browser opens a websocket session with the attacker's machine who quickly verifies the credentials using a python browser. 
+5. If the credentials were right, the server chooses one of many running docker containers and assigns the victim to that container. The container is running a firefox instance (can be accessed with VNC at ```localhost:BID``` where BID is the backend ID of a container) and a custom firefox extension (located in `/backend/containers/firefox/duo-login-ext`). 
+6. The assigned container goes to a real DUO login page and injects the victim's credentials. At this point, the victim and the container are synced: They are both at the DUO prompt where the victim has to choose an authentication method (phone call or DUO push if available. User information such as phone number and device type is communicated in realtime between backend and victim with the attacker's machine as middle-man). 
 7. The user chooses an auth method, his choice is relayed to the docker backend through the websocket server, and the docker backend makes that choice on the real DUO site. 
 8. The user will get a call or push from DUO, thinking that he made the request EVEN THOUGH THE DOCKER CONTAINED FIREFOX DID. \*\*
 9. The user authenticates the DUO request with his phone and gets re-directed to either (`/client/public/exit-site`) or the REAL, original catsoop.org page (this can be configured). In the future, if he tries to click the malicious link again, he will be auto-redirected to the legit catsoop site. 
